@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An enterprise-class UI design language and React-based implementation with a set of high-quality React components, one of best React UI library for enterprises">
+    <title>Ant Design - A UI Design Language</title>
+    <!-- Polyfills -->
+    <!--[if IE]>
+    <script src="https://as.alipayobjects.com/g/component/??es6-shim/0.35.1/es6-sham.min.js,es6-shim/0.35.1/es6-shim.min.js"></script>
+    <![endif]-->
+    <script>
+    (function() {
+      function isLocalStorageNameSupported() {
+        var testKey = 'test';
+        var storage = window.localStorage;
+        try {
+          storage.setItem(testKey, '1');
+          storage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+      // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
+      var pathname = location.pathname;
+
+      function isZhCN(pathname) {
+        return /-cn\/?$/.test(pathname);
+      }
+      function getLocalizedPathname(path, zhCN) {
+        var pathname = path.startsWith('/') ? path : '/' + path;
+        if (!zhCN) { // to enUS
+          return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
+        } else if (pathname === '/') {
+          return '/index-cn';
+        } else if (pathname.endsWith('/')) {
+          return pathname.replace(/\/$/, '-cn/');
+        }
+        return pathname + '-cn';
+      }
+
+      // 兼容旧的 URL， `?locale=...`
+      var queryString = location.search;
+      if (queryString) {
+        var isZhCNConfig = queryString.indexOf('zh-CN') > -1;
+        if (isZhCNConfig && !isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, isZhCNConfig)
+        }
+      }
+
+      // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
+      if (isLocalStorageNameSupported() && (pathname === '/' || pathname === '/index-cn')) {
+        var lang = (window.localStorage && localStorage.getItem('locale')) || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
+        // safari is 'zh-cn', while other browser is 'zh-CN';
+        if ((lang === 'zh-CN') !== isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, lang === 'zh-CN');
+        }
+      }
+      document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+    })()
+    </script>
+    <link rel="icon" href="https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="mhc-antd-adminindex-1.css"/>
+    <link rel="stylesheet" type="text/css" href="mhc-antd-adminindex-2.css"/>
+    <style id="nprogress-style">
+      #nprogress { display: none }
+    </style>
+    <!--[if lte IE 10]>
+      <script
+        src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72788897-1"></script>
+    <script>
+    if (!location.port) {
+      // Enable Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-72788897-1');
+
+      // Enable Baidu tongji
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5d9056573b37c7d6365eaff1d71d62e7";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    }
+    </script>
+    <script>
+    if (!window.Intl) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/??Intl.js,locale-data/jsonp/en.js,locale-data/jsonp/zh.js">' + '<' + '/script>');
+    }
+    if (!window.Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
+    }
+    </script>
+    <!-- Hotjar Tracking Code for ant.design -->
+    <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:473408,hjsv:5};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <!-- Deer Tracking Code for ant.design -->
+    <script>
+    !function(t,e,a,r,c){t.TracertCmdCache=t.TracertCmdCache||[],t[c]=window[c]||
+      {_isInit:!0,call:function(){t.TracertCmdCache.push(arguments)},
+      start:function(t){this.call('start',t)}},t[c].l=new Date;
+      var n=e.createElement(a),s=e.getElementsByTagName(a)[0];
+      n.async=!0,n.src=r,s.parentNode.insertBefore(n,s)}
+      (window,document,'script','https://tracert.alipay.com/tracert.js','Tracert');
+      Tracert.start({
+        spmAPos: 'a513',
+        spmBPos: 'b5776',
+      });
+    </script>
+  </head>
+  <body>
+    <div id="react-content">
+      <div class="page-wrapper" data-reactroot=""><header id="header" class="clearfix"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a id="logo" href="/"><img alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"/><img alt="Ant Design" src="https://gw.alipayobjects.com/zos/rmsportal/DkKNubTaaVsKURhcVGkh.svg"/></a></div><div class="ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div id="search-box"><i class="anticon anticon-search"></i><input type="text" placeholder="Search in mhc.antd.admin" class="ant-input"/></div><div data-show="true" class="ant-tag ant-tag-geekblue version">0.0.1</div><ul class="ant-menu menu-site ant-menu-light ant-menu-root ant-menu-horizontal" id="nav" role="menu"><li class="ant-menu-item" role="menuitem"><a href="/"><span>Home</span></a></li><li class="ant-menu-item" role="menuitem"><a href="/docs/react/introduce"><span>Components</span></a></li></ul></div></div></header><div></div><footer id="footer"><div class="footer-wrap"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>Resources</span></h2><div><a href="http://pro.ant.design">Ant Design Pro</a></div><div><a href="http://mobile.ant.design">Ant Design Mobile</a></div><div><a href="http://ng.ant.design">NG-ZORRO</a><span> - </span>Ant Design of Angular</div><div><a target="_blank " href="https://github.com/websemantics/awesome-ant-design"><span>Awesome Ant Design</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://kitchen.alipay.com">Kitchen</a><span> - </span><span>Sketch Toolkit</span></div><div><a href="http://scaffold.ant.design">Scaffolds</a><span> - </span><span>Scaffold Market</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/dvajs/dva">dva</a> - <span>Framework</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://motion.ant.design">Ant Motion</a><span> - </span><span>Motion Solution</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://library.ant.design/">Axure Library</a><span> - </span><span>Axure library</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://ux.ant.design">Ant UX</a><span> - </span><span>Sitemap Template</span></div><div><a target="_blank " href="http://ant-design.gitee.io/"><span>China Mirror 🇨🇳</span></a></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>Community</span></h2><div><a target="_blank" rel="noopener noreferrer" href="http://zhuanlan.zhihu.com/antdesign"><span>Zhihu</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://medium.com/ant-design/">Medium</a></div><div><a target="_blank" rel="noopener noreferrer" href="http://twitter.com/antdesignui">Twitter</a></div><div><a target="_blank" rel="noopener noreferrer" href="http://zhuanlan.zhihu.com/xtech"><span>Experience Cloud Blog</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://seeconf.alipay.com/">SEE Conf</a><span> - </span><span>Seeking Experience &amp; Engineering Conference</span></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>Help</span></h2><div><a target="_blank " href="https://github.com/ant-design/ant-design">GitHub</a></div><div><a href="/changelog"><span>Change Log</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/ant-design/ant-design/wiki/FAQ"><span>FAQ</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design"><span>Chat Room (中文)</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design-english"><span>Chat Room (English)</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://new-issue.ant.design/"><span>Bug Report</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/ant-design/ant-design/issues"><span>Issues</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://stackoverflow.com/questions/tagged/antd"><span>StackOverflow</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://segmentfault.com/t/antd"><span>SegmentFault</span></a></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><img class="title-icon" src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg" alt="AFX Cloud"/><span>More Products</span></h2><div><a target="_blank" rel="noopener noreferrer" href="https://yuque.com/"><span>YuQue</span></a><span> - </span><span>Write your document as a team</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://yunfengdie.com/"><span>FengDie</span></a><span> - </span><span>Mobile web app builder</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://antv.alipay.com/">AntV</a><span> - </span><span>Data Visualization</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://eggjs.org/">Egg</a><span> - </span><span>Enterprise Node Framework</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://xcloud.alipay.com/"><span>Ant Experience Cloud</span></a></div><div style="margin-top:20px"><div><div style="padding:4px;background:#fff;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1);display:inline-block;cursor:pointer"><div style="width:80px;height:16px;border-radius:2px;background:#1890ff"></div></div></div></div></div></div></div></div><div class="bottom-bar">Made with <span class="heart">❤</span> by<a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog"><span>AFX</span></a></div></footer></div>
+    </div>
+    <link rel="stylesheet/less" type="text/css" href="mhc-antd-admincolor.less"/>
+    <script src="mhc-antd-admincommon.js"></script>
+    <script src="mhc-antd-adminindex.js"></script>
+  </body>
+</html>

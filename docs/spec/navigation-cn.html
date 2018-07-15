@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An enterprise-class UI design language and React-based implementation with a set of high-quality React components, one of best React UI library for enterprises">
+    <title>Ant Design - A UI Design Language</title>
+    <!-- Polyfills -->
+    <!--[if IE]>
+    <script src="https://as.alipayobjects.com/g/component/??es6-shim/0.35.1/es6-sham.min.js,es6-shim/0.35.1/es6-shim.min.js"></script>
+    <![endif]-->
+    <script>
+    (function() {
+      function isLocalStorageNameSupported() {
+        var testKey = 'test';
+        var storage = window.localStorage;
+        try {
+          storage.setItem(testKey, '1');
+          storage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+      // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
+      var pathname = location.pathname;
+
+      function isZhCN(pathname) {
+        return /-cn\/?$/.test(pathname);
+      }
+      function getLocalizedPathname(path, zhCN) {
+        var pathname = path.startsWith('/') ? path : '/' + path;
+        if (!zhCN) { // to enUS
+          return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
+        } else if (pathname === '/') {
+          return '/index-cn';
+        } else if (pathname.endsWith('/')) {
+          return pathname.replace(/\/$/, '-cn/');
+        }
+        return pathname + '-cn';
+      }
+
+      // 兼容旧的 URL， `?locale=...`
+      var queryString = location.search;
+      if (queryString) {
+        var isZhCNConfig = queryString.indexOf('zh-CN') > -1;
+        if (isZhCNConfig && !isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, isZhCNConfig)
+        }
+      }
+
+      // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
+      if (isLocalStorageNameSupported() && (pathname === '/' || pathname === '/index-cn')) {
+        var lang = (window.localStorage && localStorage.getItem('locale')) || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
+        // safari is 'zh-cn', while other browser is 'zh-CN';
+        if ((lang === 'zh-CN') !== isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, lang === 'zh-CN');
+        }
+      }
+      document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+    })()
+    </script>
+    <link rel="icon" href="https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/index-1.css"/>
+    <link rel="stylesheet" type="text/css" href="/index-2.css"/>
+    <style id="nprogress-style">
+      #nprogress { display: none }
+    </style>
+    <!--[if lte IE 10]>
+      <script
+        src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72788897-1"></script>
+    <script>
+    if (!location.port) {
+      // Enable Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-72788897-1');
+
+      // Enable Baidu tongji
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5d9056573b37c7d6365eaff1d71d62e7";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    }
+    </script>
+    <script>
+    if (!window.Intl) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/??Intl.js,locale-data/jsonp/en.js,locale-data/jsonp/zh.js">' + '<' + '/script>');
+    }
+    if (!window.Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
+    }
+    </script>
+    <!-- Hotjar Tracking Code for ant.design -->
+    <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:473408,hjsv:5};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <!-- Deer Tracking Code for ant.design -->
+    <script>
+    !function(t,e,a,r,c){t.TracertCmdCache=t.TracertCmdCache||[],t[c]=window[c]||
+      {_isInit:!0,call:function(){t.TracertCmdCache.push(arguments)},
+      start:function(t){this.call('start',t)}},t[c].l=new Date;
+      var n=e.createElement(a),s=e.getElementsByTagName(a)[0];
+      n.async=!0,n.src=r,s.parentNode.insertBefore(n,s)}
+      (window,document,'script','https://tracert.alipay.com/tracert.js','Tracert');
+      Tracert.start({
+        spmAPos: 'a513',
+        spmBPos: 'b5776',
+      });
+    </script>
+  </head>
+  <body>
+    <div id="react-content">
+      <div class="page-wrapper" data-reactroot=""><header id="header" class="clearfix"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a id="logo" href="/index-cn"><img alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"/><img alt="Ant Design" src="https://gw.alipayobjects.com/zos/rmsportal/DkKNubTaaVsKURhcVGkh.svg"/></a></div><div class="ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div id="search-box"><i class="anticon anticon-search"></i><input type="text" placeholder="在 mhc.antd.admin 中搜索" class="ant-input"/></div><div data-show="true" class="ant-tag ant-tag-geekblue version">0.0.1</div><ul class="ant-menu menu-site ant-menu-light ant-menu-root ant-menu-horizontal" id="nav" role="menu"><li class="ant-menu-item" role="menuitem"><a href="/index-cn"><span>首页</span></a></li><li class="ant-menu-item" role="menuitem"><a href="/docs/react/introduce-cn"><span>组件</span></a></li></ul></div></div></header><div class="main-wrapper"><div class="ant-row"><div class="main-menu ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-6 ant-col-xl-5 ant-col-xxl-4"><ul class="ant-menu aside-container menu-site ant-menu-light ant-menu-root ant-menu-inline" role="menu"><li class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open" role="menuitem"><div style="padding-left:40px" class="ant-menu-submenu-title" aria-expanded="true" aria-owns="Ant Design$Menu" aria-haspopup="true"><h4>Ant Design</h4><i class="ant-menu-submenu-arrow"></i></div><ul id="Ant Design$Menu" class="ant-menu  ant-menu-sub ant-menu-inline" role="menu"><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/introduce-cn"><span>介绍</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/values-cn"><span>设计价值观</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/cases-cn"><span>实践案例</span><span class="chinese"></span></a></li></ul></li><li class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open" role="menuitem"><div style="padding-left:40px" class="ant-menu-submenu-title" aria-expanded="true" aria-owns="原则$Menu" aria-haspopup="true"><h4>原则</h4><i class="ant-menu-submenu-arrow"></i></div><ul id="原则$Menu" class="ant-menu  ant-menu-sub ant-menu-inline" role="menu"><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/proximity-cn"><span>亲密性</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/alignment-cn"><span>对齐</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/contrast-cn"><span>对比</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/repetition-cn"><span>重复</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/direct-cn"><span>直截了当</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/lightweight-cn"><span>简化交互</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/stay-cn"><span>足不出户</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/invitation-cn"><span>提供邀请</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/transition-cn"><span>巧用过渡</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/reaction-cn"><span>即时反应</span><span class="chinese"></span></a></li></ul></li><li class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open" role="menuitem"><div style="padding-left:40px" class="ant-menu-submenu-title" aria-expanded="true" aria-owns="视觉$Menu" aria-haspopup="true"><h4>视觉</h4><i class="ant-menu-submenu-arrow"></i></div><ul id="视觉$Menu" class="ant-menu  ant-menu-sub ant-menu-inline" role="menu"><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/colors-cn"><span>色彩</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/layout-cn"><span>布局</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/font-cn"><span>字体</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/icon-cn"><span>图标</span><span class="chinese"></span></a></li></ul></li><li class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open ant-menu-submenu-selected" role="menuitem"><div style="padding-left:40px" class="ant-menu-submenu-title" aria-expanded="true" aria-owns="模式$Menu" aria-haspopup="true"><h4>模式</h4><i class="ant-menu-submenu-arrow"></i></div><ul id="模式$Menu" class="ant-menu  ant-menu-sub ant-menu-inline" role="menu"><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/overview-cn"><span>概览</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/copywriting-cn"><span>文案</span><span class="chinese"></span></a></li><li class="ant-menu-item ant-menu-item-selected" role="menuitem" style="padding-left:80px"><a href="/docs/spec/navigation-cn"><span>导航</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/data-entry-cn"><span>数据录入</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/data-display-cn"><span>数据展示</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/feedback-cn"><span>反馈</span><span class="chinese"></span></a></li></ul></li><li class="ant-menu-item" role="menuitem" style="padding-left:40px"><a href="/docs/spec/visual-cn">可视化</a></li><li class="ant-menu-item" role="menuitem" style="padding-left:40px"><a href="/docs/spec/motion-cn">动效</a></li><li class="ant-menu-submenu ant-menu-submenu-inline ant-menu-submenu-open" role="menuitem"><div style="padding-left:40px" class="ant-menu-submenu-title" aria-expanded="true" aria-owns="其他$Menu" aria-haspopup="true"><h4>其他</h4><i class="ant-menu-submenu-arrow"></i></div><ul id="其他$Menu" class="ant-menu  ant-menu-sub ant-menu-inline" role="menu"><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/download-cn"><span>设计资源</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/reference-cn"><span>致敬</span><span class="chinese"></span></a></li><li class="ant-menu-item" role="menuitem" style="padding-left:80px"><a href="/docs/spec/work-with-us-cn"><span>加入我们</span><span class="chinese"></span></a></li></ul></li></ul></div><div class="main-container ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-xl-19 ant-col-xxl-20"><article class="markdown"><h1>导航<a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/docs/spec/navigation.zh-CN.md" target="_blank" rel="noopener noreferrer"><i class="anticon anticon-edit"></i></a></h1><section class="markdown"><p>在广义上，任何告知用户他在哪里，他能去什么地方以及如何到达那里的方式，都可以称之为导航。当设计者使用导航或者自定义一些导航结构时，请注意：</p><ul><li><p>尽可能提供标识、上下文线索，避免用户迷路；</p></li><li><p>保持导航样式和行为一致或者减少导航数量，降低用户学习成本；</p></li><li><p>尽可能减少页面间的跳转（例如：一个常见任务需要多个页面跳转时，请减少至一到两次），让用户移动距离保持简短。</p></li></ul></section><div class="toc-affix"><div class=""><ul class="toc"><li><a class="bisheng-toc-h2" href="#导航菜单（Menu）" title="导航菜单（Menu）">导航菜单（Menu）</a></li><li><a class="bisheng-toc-h2" href="#面包屑（Breadcrumb）" title="面包屑（Breadcrumb）">面包屑（Breadcrumb）</a></li><li><a class="bisheng-toc-h2" href="#标签页（Tabs）" title="标签页（Tabs）">标签页（Tabs）</a></li><li><a class="bisheng-toc-h2" href="#步骤条（Steps）" title="步骤条（Steps）">步骤条（Steps）</a></li><li><a class="bisheng-toc-h2" href="#分页器（Pagination）" title="分页器（Pagination）">分页器（Pagination）</a></li></ul></div></div><section class="markdown"><h2 id="导航菜单（Menu）"><span>导航菜单（Menu）</span><a href="#导航菜单（Menu）" class="anchor">#</a></h2><p>导航菜单是将内容信息友好地展示给用户的有效方式。在确定好网站的信息架构后，应当按需选取适当的导航菜单样式。</p><h3 id="顶部导航菜单"><span>顶部导航菜单</span><a href="#顶部导航菜单" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/pWbHrSnmicFxcgmWIFst.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>顶部导航菜单的形式就是把超链接连成一行，信息内容层级比较简单明了，适用在浏览性强的门户性质以及比较前台化的应用。一级类目建议在 2-7 个以内。标题长度 4-15 个字符长度为好，中文字长 2-6 个。</p><h3 id="侧边导航菜单"><span>侧边导航菜单</span><a href="#侧边导航菜单" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/VvajPSfjYcVNiNoxZFVH.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>垂直导航较横向的导航更灵活，易于向下扩展， 且允许的标签长度较长。类目数量不限，可配合滚动条使用，适合信息层级多、操作切换频率高的管理性质的应用。</p><ul><li><p>更多常用导航布局可以参考 <a href="/components/layout-cn/">Layout 组件</a>。</p></li></ul><hr/><h2 id="面包屑（Breadcrumb）"><span>面包屑（Breadcrumb）</span><a href="#面包屑（Breadcrumb）" class="anchor">#</a></h2><p>面包屑导航的作用是告诉用户当前页面在系统层级结构中的位置以及父子级页面间的关系。</p><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/ZeChCVQTCUdghxmwqKIO.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><blockquote><p>注意事项：
+1. 层级过深时，建议做隐藏处理，页面显示保持在三级以内，最多不宜超过五级；
+2. 尽可能不使用面包屑，尤其是当前页面的导航能清晰的告诉用户他在哪里时。</p></blockquote><hr/><h2 id="标签页（Tabs）"><span>标签页（Tabs）</span><a href="#标签页（Tabs）" class="anchor">#</a></h2><p>标签页把大量信息进行分类展示，用户可以方便地切换标签，而不必跳转页面进行比较浏览，可以在有限的显示区域内展示更多信息。分类可根据业务类别、业务状态或者操作类型等并列关系来分，分类标题长度为 2-6 个中文字。</p><h3 id="基本样式"><span>基本样式</span><a href="#基本样式" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/dPpWpAhQYzJOWMCeKqhe.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>引领整个页面的内容，用于主功能切换。</p><h3 id="卡片样式"><span>卡片样式</span><a href="#卡片样式" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/aJypXYetynQcJxohHefp.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>用于页面中局部展示，包裹型容器能很好的和其它内容隔离。</p><h3 id="胶囊型样式"><span>胶囊型样式</span><a href="#胶囊型样式" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/QsgJeCmaQkoRLgGRxUim.png"/></div><div class="preview-image-title"></div><div class="preview-image-description">一般用于小版块内，或与基本样式、卡片样式搭配使用。</div></div></div><p>用于卡片内的选项切换，经常和其它组件结合使用，让用户快速切换对应内容。</p><h3 id="竖状样式"><span>竖状样式</span><a href="#竖状样式" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/WvnEwzlmauGlKByAxZJH.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>用于分类较多的选项，可以不限制分类数量，具备更好的扩展性。</p><hr/><h2 id="步骤条（Steps）"><span>步骤条（Steps）</span><a href="#步骤条（Steps）" class="anchor">#</a></h2><p>步骤条是引导用户按照流程完成任务的导航条，可以帮助用户对操作流程长度和步骤有个预期，并且知道自己当前在哪个步骤，同时也可以对用户的任务完成度有明确的度量。当任务复杂或者存在先后关系时，将其分解成一系列步骤。</p><h3 id="横向流程步骤条"><span>横向流程步骤条</span><a href="#横向流程步骤条" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/ugeAGDXQQYkZIbCAGlIP.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>步骤多于 2 步时使用, 但建议不超过 5 步，每阶段文字长度保持在 12 个字符以内。</p><h3 id="竖向流程步骤条"><span>竖向流程步骤条</span><a href="#竖向流程步骤条" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/PnDNqhBRyWLLLgQSVwvF.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>一般居页面左侧，悬浮固定，可追加多行文字描述，适合较多步骤或步骤数动态变化时使用，例如：时间步骤跟踪描述。</p><hr/><h2 id="分页器（Pagination）"><span>分页器（Pagination）</span><a href="#分页器（Pagination）" class="anchor">#</a></h2><p>当有大量内容需要展现时进行分页加载处理，分页器可以让用户清楚的知道自己所要浏览的内容有多少、已经浏览了多少、还剩余多少。</p><h3 id="标准样式"><span>标准样式</span><a href="#标准样式" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/MlxHpEgkFHhIVaxpaiYJ.png"/></div><div class="preview-image-title"></div><div class="preview-image-description">当页数超过 5 页时，可以提供快速跳转页面的功能。</div></div></div><p>当信息条目较多的时候，可以允许用户自定义每页的行数，以提高用户查看和检索信息的效率和灵活性，常与表格、卡片搭配使用。</p><h3 id="迷你样式"><span>迷你样式</span><a href="#迷你样式" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/GtIWNdAtogjxXJNuuqTE.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>一般用于卡片或者浮层。</p><h3 id="简易样式"><span>简易样式</span><a href="#简易样式" class="anchor">#</a></h3><div class="preview-image-boxes clearfix"><div class="preview-image-box"><div class="preview-image-wrapper"><img class="preview-img no-padding" src="https://gw.alipayobjects.com/zos/rmsportal/LCUZrQJyHQXplzEzDrub.png"/></div><div class="preview-image-title"></div><div class="preview-image-description"></div></div></div><p>一般用于卡片或者统计类表格展示，在 10 页之内。</p></section><section class="markdown api-container"></section></article></div></div><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-18 ant-col-lg-offset-6 ant-col-xl-19 ant-col-xl-offset-5 ant-col-xxl-20 ant-col-xxl-offset-4"><section class="prev-next-nav"><a class="prev-page" href="/docs/spec/copywriting-cn"><span>文案</span><span class="chinese"></span></a><a class="next-page" href="/docs/spec/data-entry-cn"><span>数据录入</span><span class="chinese"></span></a></section></div></div></div><footer id="footer"><div class="footer-wrap"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>相关资源</span></h2><div><a href="http://pro.ant.design">Ant Design Pro</a></div><div><a href="http://mobile.ant.design">Ant Design Mobile</a></div><div><a href="http://ng.ant.design">NG-ZORRO</a><span> - </span>Ant Design of Angular</div><div><a target="_blank " href="https://github.com/websemantics/awesome-ant-design"><span>Awesome Ant Design</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://kitchen.alipay.com">Kitchen</a><span> - </span><span>Sketch 工具集</span></div><div><a href="http://scaffold.ant.design">Scaffolds</a><span> - </span><span>脚手架市场</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/dvajs/dva">dva</a> - <span>应用框架</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://motion.ant.design">Ant Motion</a><span> - </span><span>设计动效</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://library.ant.design/">Axure Library</a><span> - </span><span>Axure 部件库</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://ux.ant.design">Ant UX</a><span> - </span><span>页面逻辑素材</span></div><div><a target="_blank " href="http://ant-design.gitee.io/"><span>国内镜像站点 🇨🇳</span></a></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>社区</span></h2><div><a target="_blank" rel="noopener noreferrer" href="http://zhuanlan.zhihu.com/antdesign"><span>知乎专栏</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://medium.com/ant-design/">Medium</a></div><div><a target="_blank" rel="noopener noreferrer" href="http://twitter.com/antdesignui">Twitter</a></div><div><a target="_blank" rel="noopener noreferrer" href="http://zhuanlan.zhihu.com/xtech"><span>体验科技专栏</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://seeconf.alipay.com/">SEE Conf</a><span> - </span><span>蚂蚁体验科技大会</span></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>帮助</span></h2><div><a target="_blank " href="https://github.com/ant-design/ant-design">GitHub</a></div><div><a href="/changelog"><span>更新记录</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/ant-design/ant-design/wiki/FAQ"><span>常见问题</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design"><span>在线讨论 (中文)</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design-english"><span>在线讨论 (English)</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://new-issue.ant.design/"><span>报告 Bug</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/ant-design/ant-design/issues"><span>讨论列表</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://stackoverflow.com/questions/tagged/antd"><span>StackOverflow</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://segmentfault.com/t/antd"><span>SegmentFault</span></a></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><img class="title-icon" src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg" alt="AFX Cloud"/><span>更多产品</span></h2><div><a target="_blank" rel="noopener noreferrer" href="https://yuque.com/"><span>语雀</span></a><span> - </span><span>企业文档管理平台</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://yunfengdie.com/"><span>云凤蝶</span></a><span> - </span><span>移动建站平台</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://antv.alipay.com/">AntV</a><span> - </span><span>数据可视化</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://eggjs.org/">Egg</a><span> - </span><span>企业级 Node 开发框架</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://xcloud.alipay.com/"><span>蚂蚁体验云</span></a></div><div style="margin-top:20px"><div><div style="padding:4px;background:#fff;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1);display:inline-block;cursor:pointer"><div style="width:80px;height:16px;border-radius:2px;background:#1890ff"></div></div></div></div></div></div></div></div><div class="bottom-bar">Made with <span class="heart">❤</span> by<a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog"><span>AFX</span></a></div></footer></div>
+    </div>
+    <link rel="stylesheet/less" type="text/css" href="/color.less"/>
+    <script src="/common.js"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>

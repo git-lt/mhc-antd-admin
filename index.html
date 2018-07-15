@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An enterprise-class UI design language and React-based implementation with a set of high-quality React components, one of best React UI library for enterprises">
+    <title>Ant Design - A UI Design Language</title>
+    <!-- Polyfills -->
+    <!--[if IE]>
+    <script src="https://as.alipayobjects.com/g/component/??es6-shim/0.35.1/es6-sham.min.js,es6-shim/0.35.1/es6-shim.min.js"></script>
+    <![endif]-->
+    <script>
+    (function() {
+      function isLocalStorageNameSupported() {
+        var testKey = 'test';
+        var storage = window.localStorage;
+        try {
+          storage.setItem(testKey, '1');
+          storage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
+      // 优先级提高到所有静态资源的前面，语言不对，加载其他静态资源没意义
+      var pathname = location.pathname;
+
+      function isZhCN(pathname) {
+        return /-cn\/?$/.test(pathname);
+      }
+      function getLocalizedPathname(path, zhCN) {
+        var pathname = path.startsWith('/') ? path : '/' + path;
+        if (!zhCN) { // to enUS
+          return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
+        } else if (pathname === '/') {
+          return '/index-cn';
+        } else if (pathname.endsWith('/')) {
+          return pathname.replace(/\/$/, '-cn/');
+        }
+        return pathname + '-cn';
+      }
+
+      // 兼容旧的 URL， `?locale=...`
+      var queryString = location.search;
+      if (queryString) {
+        var isZhCNConfig = queryString.indexOf('zh-CN') > -1;
+        if (isZhCNConfig && !isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, isZhCNConfig)
+        }
+      }
+
+      // 首页无视链接里面的语言设置 https://github.com/ant-design/ant-design/issues/4552
+      if (isLocalStorageNameSupported() && (pathname === '/' || pathname === '/index-cn')) {
+        var lang = (window.localStorage && localStorage.getItem('locale')) || ((navigator.language || navigator.browserLanguage).toLowerCase() === 'zh-cn' ? 'zh-CN' : 'en-US');
+        // safari is 'zh-cn', while other browser is 'zh-CN';
+        if ((lang === 'zh-CN') !== isZhCN(pathname)) {
+          location.pathname = getLocalizedPathname(pathname, lang === 'zh-CN');
+        }
+      }
+      document.documentElement.className += isZhCN(pathname) ? 'zh-cn' : 'en-us';
+    })()
+    </script>
+    <link rel="icon" href="https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/index-1.css"/>
+    <link rel="stylesheet" type="text/css" href="/index-2.css"/>
+    <style id="nprogress-style">
+      #nprogress { display: none }
+    </style>
+    <!--[if lte IE 10]>
+      <script
+        src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72788897-1"></script>
+    <script>
+    if (!location.port) {
+      // Enable Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-72788897-1');
+
+      // Enable Baidu tongji
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?5d9056573b37c7d6365eaff1d71d62e7";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    }
+    </script>
+    <script>
+    if (!window.Intl) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/??Intl.js,locale-data/jsonp/en.js,locale-data/jsonp/zh.js">' + '<' + '/script>');
+    }
+    if (!window.Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
+    }
+    </script>
+    <!-- Hotjar Tracking Code for ant.design -->
+    <script>
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:473408,hjsv:5};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <!-- Deer Tracking Code for ant.design -->
+    <script>
+    !function(t,e,a,r,c){t.TracertCmdCache=t.TracertCmdCache||[],t[c]=window[c]||
+      {_isInit:!0,call:function(){t.TracertCmdCache.push(arguments)},
+      start:function(t){this.call('start',t)}},t[c].l=new Date;
+      var n=e.createElement(a),s=e.getElementsByTagName(a)[0];
+      n.async=!0,n.src=r,s.parentNode.insertBefore(n,s)}
+      (window,document,'script','https://tracert.alipay.com/tracert.js','Tracert');
+      Tracert.start({
+        spmAPos: 'a513',
+        spmBPos: 'b5776',
+      });
+    </script>
+  </head>
+  <body>
+    <div id="react-content">
+      <div class="page-wrapper" data-reactroot=""><header id="header" class="clearfix"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6 ant-col-lg-5 ant-col-xl-5 ant-col-xxl-4"><a id="logo" href="/"><img alt="logo" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"/><img alt="Ant Design" src="https://gw.alipayobjects.com/zos/rmsportal/DkKNubTaaVsKURhcVGkh.svg"/></a></div><div class="ant-col-xs-0 ant-col-sm-0 ant-col-md-18 ant-col-lg-19 ant-col-xl-19 ant-col-xxl-20"><div id="search-box"><i class="anticon anticon-search"></i><input type="text" placeholder="Search in mhc.antd.admin" class="ant-input"/></div><div data-show="true" class="ant-tag ant-tag-geekblue version">0.0.1</div><ul class="ant-menu menu-site ant-menu-light ant-menu-root ant-menu-horizontal" id="nav" role="menu"><li class="ant-menu-item ant-menu-item-selected" role="menuitem"><a href="/"><span>Home</span></a></li><li class="ant-menu-item" role="menuitem"><a href="/docs/react/introduce"><span>Components</span></a></li></ul></div></div></header><div class="main-wrapper"><div class="home-page-wrapper banner-wrapper" id="banner"><div class="banner-bg-wrapper"><svg width="400px" height="576px" viewBox="0 0 400 576" fill="none"><g><ellipse id="Oval-9-Copy-4" cx="100" cy="100" rx="6" ry="6" stroke="#2F54EB" stroke-width="1.6"></ellipse></g><g><g transform="translate(200 450)"><g style="transform-origin:50% 50%;transform:rotate(-340deg)"><rect stroke="#FADB14" stroke-width="1.6" width="9" height="9"></rect></g></g></g></svg><div class="banner-bg"></div></div><div class="banner page"></div></div><div class="home-page-wrapper page1"><div class="page"><h2><span>Design Language</span></h2><div><div class="ant-row"></div></div></div></div><div class="home-page-wrapper page2" id="page2"><div class="page"><h2><span>Solution</span></h2><div class="ant-row page2-content"><div class="page2-components ant-col-xs-24 ant-col-md-12"></div><div class="page2-product ant-col-xs-24 ant-col-md-12"></div></div></div><div class="parallax-bg bottom"><svg width="100%" height="100%" viewBox="0 0 1401 1109" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" preserveAspectRatio="xMidYMid slice"><g><g transform="translate(-79.000000, -21.000000)"><circle id="Oval-13" stroke="none" fill="#EBEDF0" fill-rule="evenodd" cx="98.5" cy="98.5" r="98.5"></circle><rect id="Rectangle-33" stroke="none" fill="#EBEDF0" fill-rule="evenodd" transform="translate(1261.132034, 1217.132034) rotate(45.000000) translate(-1261.132034, -1217.132034) " x="1111.13203" y="1007.13203" width="300" height="300" rx="1"></rect><circle id="Oval-13" stroke="#EBEDF0" stroke-width="16" fill="none" cx="1402" cy="151" r="70"></circle><path d="M385.032144,960.394832 L394.316344,976.475539 C394.868629,977.432124 394.540879,978.655305 393.584293,979.20759 C393.280255,979.383126 392.935367,979.475539 392.584293,979.475539 L374.015893,979.475539 C372.911323,979.475539 372.015893,978.580108 372.015893,977.475539 C372.015893,977.124466 372.108305,976.779577 372.283842,976.475539 L381.568042,960.394832 C382.120327,959.438247 383.343508,959.110497 384.300093,959.662781 C384.604131,959.838318 384.856607,960.090794 385.032144,960.394832 Z" id="Polygon-2" stroke="none" fill="#A3B1BF" fill-rule="evenodd" transform="translate(383.300093, 970.709623) rotate(70.000000) translate(-383.300093, -970.709623) "></path><path d="M545.537489,211.431472 L552.545207,223.569196 C553.097492,224.525781 552.769741,225.748962 551.813156,226.301246 C551.509118,226.476783 551.164229,226.569196 550.813156,226.569196 L536.79772,226.569196 C535.693151,226.569196 534.79772,225.673765 534.79772,224.569196 C534.79772,224.218122 534.890133,223.873234 535.06567,223.569196 L542.073387,211.431472 C542.625672,210.474887 543.848853,210.147137 544.805438,210.699421 C545.109477,210.874958 545.361952,211.127434 545.537489,211.431472 Z" id="Polygon-2" stroke="none" fill="#A3B1BF" fill-rule="evenodd" transform="translate(543.805605, 218.500167) rotate(90.000000) translate(-543.805605, -218.500167) "></path><g id="Group-26" transform="translate(146.000000, 338.000000)" fill="#FADB14"><image xlink:href="https://gw.alipayobjects.com/zos/rmsportal/UtBesTOkoZsBUxPqfDlZ.svg"></image></g></g></g></svg></div><div class="parallax-bg top"><svg width="1311px" height="920px" viewBox="0 0 1311 920" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><g id="Group-29" transform="translate(283.000000, 920.000000)" fill="#2F54EB"><image xlink:href="https://gw.alipayobjects.com/zos/rmsportal/VrADJaRPMnFjmtmIhObV.svg"></image></g></g><g><circle id="Oval-8" stroke="#13C2C2" stroke-width="4" opacity="0.95" cx="1096" cy="11" r="11"></circle></g><g><circle id="Oval-8" stroke="#13C2C2" stroke-width="4" cx="11" cy="667" r="11"></circle></g><g><g id="Group-11" transform="translate(1207.000000, 419.000000)" fill="#13C2C2"><image xlink:href="https://gw.alipayobjects.com/zos/rmsportal/MnLEmwjipfhzPUmBJnJE.svg"></image></g></g><g><g id="Group-28" transform="translate(884.000000, 821.000000)" fill="#2F54EB"><image xlink:href="https://gw.alipayobjects.com/zos/rmsportal/dyNuxLOZtvjoHSVisbhQ.svg"></image></g></g></svg></div></div><div class="home-page-wrapper page3" id="page3"><div class="parallax-bg top"><svg width="1440px" height="557px" viewBox="0 0 1440 557" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><circle id="Oval-8" stroke="#13C2C2" cx="530" cy="195" r="5"></circle></g><g><circle id="Oval-8" fill-opacity="0.4" fill="#9EE6E6" cx="606" cy="76" r="3"></circle></g><g><circle id="Oval-8" stroke="#13C2C2" cx="165" cy="540" r="5"></circle></g><g><circle id="Oval-8" stroke="#CED4D9" cx="701.5" cy="650" r="3.5"></circle></g><g><circle id="Oval-8" stroke="#F5222D" cx="526.5" cy="381.5" r="3.5"></circle></g><g><circle id="Oval-8" fill-opacity="0.4" fill="#9EE6E6" cx="944" cy="251" r="5"></circle></g><g><g transform="translate(0, 180)"><path d="M1182.79367,448.230356 L1186.00213,453.787581 C1186.55442,454.744166 1186.22667,455.967347 1185.27008,456.519632 C1184.96604,456.695168 1184.62116,456.787581 1184.27008,456.787581 L1177.85315,456.787581 C1176.74858,456.787581 1175.85315,455.89215 1175.85315,454.787581 C1175.85315,454.436507 1175.94556,454.091619 1176.1211,453.787581 L1179.32957,448.230356 C1179.88185,447.273771 1181.10503,446.946021 1182.06162,447.498305 C1182.36566,447.673842 1182.61813,447.926318 1182.79367,448.230356 Z" id="Polygon-2" stroke="#CED4D9" transform="translate(1181.061784, 452.008801) rotate(40.000000) translate(-1181.061784, -452.008801) "></path></g></g><g><g transform="translate(0, 100)"><path d="M1376.79367,204.230356 L1380.00213,209.787581 C1380.55442,210.744166 1380.22667,211.967347 1379.27008,212.519632 C1378.96604,212.695168 1378.62116,212.787581 1378.27008,212.787581 L1371.85315,212.787581 C1370.74858,212.787581 1369.85315,211.89215 1369.85315,210.787581 C1369.85315,210.436507 1369.94556,210.091619 1370.1211,209.787581 L1373.32957,204.230356 C1373.88185,203.273771 1375.10503,202.946021 1376.06162,203.498305 C1376.36566,203.673842 1376.61813,203.926318 1376.79367,204.230356 Z" id="Polygon-2" stroke="#2F54EB" transform="translate(1375.061784, 208.008801) rotate(40.000000) translate(-1375.061784, -208.008801) "></path></g></g><g><rect id="Rectangle-14" stroke-opacity="0.4" stroke="#1D39C4" transform="translate(949.801502, 129.801502) rotate(30.000000) translate(-949.801502, -129.801502) " x="942.626304" y="222.626304" width="14.3503946" height="14.3503946" rx="1"></rect></g><g><rect id="Rectangle-14" stroke="#CED4D9" transform="translate(111.673081, 158.673081) rotate(30.000000) translate(-111.673081, -158.673081) " x="107.288047" y="254.288047" width="8.77006914" height="8.77006914" rx="1"></rect></g></svg></div><div class="page"><h2><span>Tools &amp; Resources</span></h2><div><div class="ant-row"></div></div></div></div><style>
+    .main-wrapper {
+      padding: 0;
+    }
+    #header {
+      box-shadow: none;
+      max-width: 1200px;
+      width: 100%;
+      margin: 20px auto 0;
+      padding: 0 24px;
+    }
+    #header,
+    #header .ant-select-selection,
+    #header .ant-menu {
+      background: transparent;
+    }
+    #header #logo {
+      padding: 0;
+    }
+    #header .ant-row > div:last-child .ant-menu,
+    #header .nav-phone-icon {
+      display: none;
+    }
+    #header .ant-row > div:last-child .header-lang-button {
+      margin-right: 0;
+    }
+    footer .footer-wrap {
+      width: 100%;
+      padding: 0;
+    }
+    footer .footer-wrap .ant-row {
+      width: 100%;
+      max-width: 1200px;
+      padding: 86px 24px 93px 24px;
+      margin: auto;
+    }
+    @media only screen and (max-width: 767.99px) {
+      #footer .footer-wrap{
+        padding: 40px 24px
+      }
+      footer .footer-wrap .ant-row {
+        padding: 0;
+      }
+    }
+  </style></div><footer id="footer"><div class="footer-wrap"><div class="ant-row"><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>Resources</span></h2><div><a href="http://pro.ant.design">Ant Design Pro</a></div><div><a href="http://mobile.ant.design">Ant Design Mobile</a></div><div><a href="http://ng.ant.design">NG-ZORRO</a><span> - </span>Ant Design of Angular</div><div><a target="_blank " href="https://github.com/websemantics/awesome-ant-design"><span>Awesome Ant Design</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://kitchen.alipay.com">Kitchen</a><span> - </span><span>Sketch Toolkit</span></div><div><a href="http://scaffold.ant.design">Scaffolds</a><span> - </span><span>Scaffold Market</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/dvajs/dva">dva</a> - <span>Framework</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://motion.ant.design">Ant Motion</a><span> - </span><span>Motion Solution</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://library.ant.design/">Axure Library</a><span> - </span><span>Axure library</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://ux.ant.design">Ant UX</a><span> - </span><span>Sitemap Template</span></div><div><a target="_blank " href="http://ant-design.gitee.io/"><span>China Mirror 🇨🇳</span></a></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>Community</span></h2><div><a target="_blank" rel="noopener noreferrer" href="http://zhuanlan.zhihu.com/antdesign"><span>Zhihu</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://medium.com/ant-design/">Medium</a></div><div><a target="_blank" rel="noopener noreferrer" href="http://twitter.com/antdesignui">Twitter</a></div><div><a target="_blank" rel="noopener noreferrer" href="http://zhuanlan.zhihu.com/xtech"><span>Experience Cloud Blog</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://seeconf.alipay.com/">SEE Conf</a><span> - </span><span>Seeking Experience &amp; Engineering Conference</span></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><span>Help</span></h2><div><a target="_blank " href="https://github.com/ant-design/ant-design">GitHub</a></div><div><a href="/changelog"><span>Change Log</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/ant-design/ant-design/wiki/FAQ"><span>FAQ</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design"><span>Chat Room (中文)</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://gitter.im/ant-design/ant-design-english"><span>Chat Room (English)</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://new-issue.ant.design/"><span>Bug Report</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://github.com/ant-design/ant-design/issues"><span>Issues</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="http://stackoverflow.com/questions/tagged/antd"><span>StackOverflow</span></a></div><div><a target="_blank" rel="noopener noreferrer" href="https://segmentfault.com/t/antd"><span>SegmentFault</span></a></div></div></div><div class="ant-col-xs-24 ant-col-sm-24 ant-col-md-6"><div class="footer-center"><h2><img class="title-icon" src="https://gw.alipayobjects.com/zos/rmsportal/nBVXkrFdWHxbZlmMbsaH.svg" alt="AFX Cloud"/><span>More Products</span></h2><div><a target="_blank" rel="noopener noreferrer" href="https://yuque.com/"><span>YuQue</span></a><span> - </span><span>Write your document as a team</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://yunfengdie.com/"><span>FengDie</span></a><span> - </span><span>Mobile web app builder</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://antv.alipay.com/">AntV</a><span> - </span><span>Data Visualization</span></div><div><a target="_blank" rel="noopener noreferrer" href="https://eggjs.org/">Egg</a><span> - </span><span>Enterprise Node Framework</span></div><div><a target="_blank" rel="noopener noreferrer" href="http://xcloud.alipay.com/"><span>Ant Experience Cloud</span></a></div><div style="margin-top:20px"><div><div style="padding:4px;background:#fff;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.1);display:inline-block;cursor:pointer"><div style="width:80px;height:16px;border-radius:2px;background:#1890ff"></div></div></div></div></div></div></div></div><div class="bottom-bar">Made with <span class="heart">❤</span> by<a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog"><span>AFX</span></a></div></footer></div>
+    </div>
+    <link rel="stylesheet/less" type="text/css" href="/color.less"/>
+    <script src="/common.js"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>

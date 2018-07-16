@@ -651,14 +651,14 @@ var __wpo = {
     "c6c61eab7a6b082803bae890bffa8f9d8a5ff143": "mhc-antd-admin/components/IFRender/index.en-US.md.js",
     "d0e89cafab034c104d959b6ca075b753da40fbb7": "mhc-antd-admin/CHANGELOG.zh-CN.md.js",
     "ff6472eb9c4982becd56f1ca84e34fe473e48ec7": "mhc-antd-admin/CHANGELOG.en-US.md.js",
-    "eed3714654f05c34dbfa9e160879084076cd5599": "mhc-antd-admin/index.js",
-    "057a091639cad37b49b496c0955fdcf5da970cf7": "mhc-antd-admin/common.js",
+    "3cb9cf74317cf066ba5871146a665ed3b16ea5cc": "mhc-antd-admin/index.js",
+    "b9a3df2ae1aa117a18c8885896e07afac0c33d57": "mhc-antd-admin/common.js",
     "2edce3762d425f2b90ff002f68541b7672f153b8": "mhc-antd-admin/index-1.css",
     "c177fc8464e610ec5855cbaf79718c5b17706e8b": "mhc-antd-admin/index-2.css"
   },
   "strategy": "changed",
   "responseStrategy": "network-first",
-  "version": "2018-7-15 11:24:25",
+  "version": "2018-7-16 13:34:23",
   "name": "webpack-offline",
   "pluginVersion": "5.0.5",
   "relativePaths": false
@@ -723,7 +723,7 @@ var __wpo = {
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "mhc-antd-admin";
+/******/ 	__webpack_require__.p = "mhc-antd-admin/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);

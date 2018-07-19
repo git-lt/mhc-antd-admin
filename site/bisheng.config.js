@@ -23,7 +23,7 @@ function alertBabelConfig(rules) {
 }
 
 module.exports = {
-  root: 'mhc-antd-admin',
+  root: '/mhc-antd-admin/',
   port: 8001,
   source: {
     components: './components',

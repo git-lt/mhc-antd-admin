@@ -1,9 +1,8 @@
 {
-  "name": "antd",
+  "name": "mhc-antd-admin",
   "version": "0.0.1",
   "title": "MHC Antd Admin",
-  "description": "An enterprise-class UI design language and React-based implementation",
-  "homepage": "http://ant.design/",
+  "description": "An out-of-box UI solution for enterprise applications",
   "keywords": [
     "ant",
     "design",
@@ -20,17 +19,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design"
+    "url": "https://github.com/git-lt/mhc-antd-admin"
   },
   "bugs": {
-    "url": "https://github.com/ant-design/ant-design/issues"
+    "url": "https://github.com/git-lt/mhc-antd-admin/issues"
   },
   "main": "lib/index.js",
-  "module": "es/index.js",
   "files": [
     "dist",
-    "lib",
-    "es"
+    "lib"
   ],
   "typings": "lib/index.d.ts",
   "license": "MIT",
@@ -131,10 +128,7 @@
     "react-router-dom": "^4.2.2",
     "react-sublime-video": "^0.2.0",
     "react-virtualized": "~9.20.0",
-    "remark-frontmatter": "^1.1.0",
-    "remark-parse": "^5.0.0",
-    "remark-stringify": "^5.0.0",
-    "remark-yaml-config": "^4.0.1",
+ 
     "reqwest": "^2.0.5",
     "rimraf": "^2.5.4",
     "scrollama": "^1.4.1",
@@ -151,16 +145,21 @@
     "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
     "site": "cross-env NODE_ENV=production bisheng build --ssr -c ./site/bisheng.config.js",
     "deploy": "bisheng gh-pages --push-only",
-    "pub": "antd-tools run pub"
+    "pub": "antd-tools run pub",
+    "lint": "eslint --ext .js src mock tests && npm run lint:style",
+    "lint:fix": "eslint --fix --ext .js src mock tests && npm run lint:style",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint ./.eslintrc.js ./webpack.config.js",
+    "lint-staged:style": "stylelint \"src/**/*.less\" --syntax less",
+    "lint-staged:demo": "cross-env RUN_ENV=DEMO eslint --ext '.md'"
   },
   "lint-staged": {
-    "components/**/*.tsx": [
-      "npm run lint-staged:ts"
+    "{site,components}/**/*.{js,jsx}": [
+      "npm run lint-staged:js"
     ],
-    "{tests,site,scripts,components}/**/*.{js,jsx}": [
-      "npm run lint-staged:es"
+    "{site,components}/**/*.less": [
+      "npm run lint-staged:style"
     ],
-    "{site,components}/**/*.less": "stylelint --syntax less",
     "components/*/demo/*.md": [
       "npm run lint-staged:demo"
     ]

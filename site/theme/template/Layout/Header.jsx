@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'bisheng/router';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import { Menu, Row, Col, Icon, Popover, Input, Button, Tag } from 'antd';
+import { Menu, Row, Col, Icon, Popover, Input, Button } from 'antd';
 import * as utils from '../utils';
 import { version as antdVersion } from '../../../../package.json';
 

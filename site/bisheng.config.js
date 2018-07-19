@@ -29,8 +29,7 @@ module.exports = {
     components: './components',
     docs: './docs',
     changelog: [
-      'CHANGELOG.zh-CN.md',
-      'CHANGELOG.en-US.md',
+      'CHANGELOG.md',
     ],
   },
   theme: './site/theme',
@@ -60,7 +59,6 @@ module.exports = {
     },
     docVersions: {
       '1.x': 'http://1x.ant.design',
-      '2.x': 'http://2x.ant.design',
     },
   },
   filePathMapper(filePath) {

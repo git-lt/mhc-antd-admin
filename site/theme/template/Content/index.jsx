@@ -3,19 +3,16 @@ import MainContent from './MainContent';
 import * as utils from '../utils';
 
 function isChangelog(pathname) {
-  return pathname.indexOf('changelog') >= 0;
+  return pathname.toLowerCase().indexOf('changelog') >= 0;
 }
 
 export default collect(async (nextProps) => {
-  console.log(nextProps);
   const { pathname } = nextProps.location;
   const pageDataPath = pathname.replace('-cn', '').split('/');
-  console.log(nextProps.utils.get(nextProps.data, pageDataPath));
   const pageData = isChangelog(pathname)
     ? nextProps.data.changelog.CHANGELOG
     : nextProps.utils.get(nextProps.data, pageDataPath);
   if (!pageData) {
-    console.log(2);
     throw 404; // eslint-disable-line no-throw-literal
   }
 

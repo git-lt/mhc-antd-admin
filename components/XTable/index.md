@@ -2,6 +2,7 @@
 category: Components
 type: Data Display
 subtitle: 通用列表
+cols: 1
 title: XTable
 ---
 

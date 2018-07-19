@@ -27,19 +27,21 @@ class App extends React.Component {
   state = {
     current: '',
   }
-  onStateChange = e => {
+
+  onStateChange = (e) => {
     this.setState({ current: e.target.value });
   }
-  render(){
+
+  render() {
     return (
-      <XRadioGroup 
+      <XRadioGroup
         current={this.state.current}
         onChange={this.onStateChange}
-        data={INSPECT_STATUS} 
-        hasAll 
+        data={INSPECT_STATUS}
+        hasAll
       />
     );
-  } 
+  }
 }
 
 ReactDOM.render(

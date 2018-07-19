@@ -23,7 +23,7 @@ import { XForm } from 'mhc-antd-admin';
 | --- | --- | --- | --- |
 | items | 表单项配置 | Array | - |
 | actionsConfig | 操作项配置 | Object | - |
-| loading | 表单整体的 `Loading` 状态 | Boolean | false |
+| loading | 提交按钮的 `Loading` 状态 | Boolean | false |
 
 ### items
 

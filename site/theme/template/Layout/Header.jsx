@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'bisheng/router';
 import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
-import { Select, Menu, Row, Col, Icon, Popover, Input, Badge, Button, Tag } from 'antd';
+import { Select, Menu, Row, Col, Icon, Popover, Input, Button, Tag } from 'antd';
 import * as utils from '../utils';
 import { version as antdVersion } from '../../../../package.json';
 
@@ -103,11 +103,9 @@ export default class Header extends React.Component {
     const { isMobile } = this.context;
     const menuMode = isMobile ? 'inline' : 'horizontal';
     const {
-      location, themeConfig,
+      location,
     } = this.props;
-    const docVersions = { ...themeConfig.docVersions, [antdVersion]: antdVersion };
-    const versionOptions = Object.keys(docVersions)
-      .map(version => <Option value={docVersions[version]} key={version}>{version}</Option>);
+
     const module = location.pathname.replace(/(^\/|\/$)/g, '').split('/').slice(0, -1).join('/');
     let activeMenuItem = module || 'home';
     if (activeMenuItem === 'components' || location.pathname === 'changelog') {

@@ -22,24 +22,27 @@ class App extends React.Component {
   state = {
     show: false,
   }
+
   showDetail = () => this.setState({ show: true });
+
   hideDetail = () => this.setState({ show: false });
-  render(){
+
+  render() {
     return (
       <div>
         <Button onClick={this.showDetail}>显示详情</Button>
         <Offcanvas show={this.state.show} position="right" onClose={this.hideDetail} closeByMask>
           <div id="offcanvas-inner">
-            <div>详情内容</div> 
-            <div>详情内容</div> 
-            <div>详情内容</div> 
-            <div>详情内容</div> 
-            <div>详情内容</div> 
+            <div>详情内容</div>
+            <div>详情内容</div>
+            <div>详情内容</div>
+            <div>详情内容</div>
+            <div>详情内容</div>
           </div>
         </Offcanvas>
       </div>
     );
-  } 
+  }
 }
 
 ReactDOM.render(

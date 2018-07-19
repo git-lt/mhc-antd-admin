@@ -14,18 +14,132 @@ title:
 The most basic usage.
 
 ````jsx
-import XSelect from 'mhc-antd-admin/XSelect';
+import { Fragment } from  'react';
+import { Button, Input, Divider } from 'antd';
+import XTable from 'mhc-antd-admin/XTable';
+import XRadioGroup from 'mhc-antd-admin/XRadioGroup';
+import axios from 'axios'
 
-const CONTACT_INFO_TYPE = [
-  { key: '6', value: '验车司机' },
-  { key: '7', value: '验车专员' },
-  { key: '8', value: '验车员' },
+const { Search } = Input;
+
+export const STATES = [
+  { value: '全部', key: '' },
+  { value: '待处理', key: '1' },
+  { value: '执行中', key: '2' },
+  { value: '已完成', key: '3' },
+  { value: '已取消', key: '4' },
 ];
 
+const columns = [
+  { title: '英文姓名', width: 80, dataIndex: 'name', fixed: 'left', resizable: false },
+  { title: '颜色', width: 100, dataIndex: 'color' },
+  { title: '英文标题', width: 110, dataIndex: 'title' },
+  { title: '链接', width: 90, dataIndex: 'url' },
+  { title: '邮箱', width: 100, dataIndex: 'email' },
+  { title: '时间', width: 150, dataIndex: 'date' },
+  { title: '汉字', width: 200, dataIndex: 'ctitle' },
+  { title: '汉字姓名', width: 200, dataIndex: 'canme' },
+  { title: '地址', width: 200, dataIndex: 'cadd' },
+  { title: '手机号', width: 200, dataIndex: 'phone' },
+  {
+      title: '操作',
+      fixed: 'right',
+      width: 160,
+      resizable: false,
+      primay: true,
+      render: row => (
+        <Fragment>
+          <a>修改</a>
+          <Divider type="vertical" />
+          <a>删除</a>
+        </Fragment>
+      ),
+    },
+]
+
 class App extends React.Component {
-  render(){
-    return (<XSelect data={CONTACT_INFO_TYPE} style={{width: 140}}></XSelect>);
-  } 
+
+  state = {
+    currState: '',
+    total: 0,
+    current: 1,
+    pageSize: 10,
+    listLoading: false,
+    dataList: [],
+  }
+
+  componentDidMount(){
+    this.getList();
+  }
+
+  handleStatusChange = e => this.setState({ currState: e.target.value, current: 1 }, this.getList);
+
+  onPageChange = (current, pageSize) => this.setState({ current, pageSize }, this.getList)
+
+  getList = () => {
+    const dataUrl = 'https://www.easy-mock.com/mock/5aec48722880ac6e857945db/example_1503654744662_copy/users';
+    
+    axios
+      .get(dataUrl)
+      .then(res => res.data)
+      .then(res => {
+        const { list, total } = res;
+        this.setState({ dataList: list, total, listLoading: false })
+      })
+      .catch(err => {
+        this.setState({ listLoading: false });
+      })
+  }
+
+  render() {
+     const toolbar = (<Fragment>
+      <div>
+        <XRadioGroup 
+          style={{marginRight: 8}}
+          current={this.state.currState}
+          onChange={this.handleStatusChange}
+          data={STATES}
+          hasAll
+        />
+        <Search
+          placeholder="请输入单号"
+          onSearch={this.getList}
+          style={{ width: 300 }}
+        />
+      </div>
+      <div><Button type="primary">创建新用户</Button></div>
+    </Fragment>);
+
+    const { dataList, listLoading, total, current, pageSize } = this.state;
+
+    const options = {
+      size: 'middle',
+      dataSource: dataList,
+      columns: columns,
+      loading: listLoading,
+      pagination: {
+        total,
+        current,
+        pageSize,
+        showQuickJumper: true,
+        showTotal: total => `共 ${total} 项`,
+        hideOnSinglePage: true,
+        pageSizeOptions: ['10', '20', '30', '40'],
+        onChange: this.onPageChange,
+        onShowSizeChange: this.onPageChange,
+      },
+      scroll: { x: 1700 }
+    }
+
+    return (
+      <XTable 
+        tableOptions={options}
+        toolbar={toolbar}
+        columnResizable
+        showColumnSelection
+      />
+    );
+  }
 }
 
 ReactDOM.render(

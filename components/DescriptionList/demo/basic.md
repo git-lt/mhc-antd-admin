@@ -26,6 +26,6 @@ ReactDOM.render(
     <Description term="合同价"> 10万 </Description>
     <Description term="生产日期"> 2018-07-12 </Description>
     <Description term="公里数"> 100 </Description>
-  </DescriptionList>
-, mountNode);
+  </DescriptionList>,
+  mountNode);
 ````

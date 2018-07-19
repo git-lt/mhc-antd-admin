@@ -23,6 +23,6 @@ ReactDOM.render(
     <Ellipsis length={100}>{article}</Ellipsis>
     <h4 style={{ marginTop: 24 }}>Show Tooltip</h4>
     <Ellipsis length={100} tooltip>{article}</Ellipsis>
-  </div>
-, mountNode);
+  </div>,
+  mountNode);
 ````

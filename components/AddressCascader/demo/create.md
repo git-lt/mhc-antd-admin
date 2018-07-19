@@ -23,9 +23,9 @@ const CONTACT_INFO_TYPE = [
 ];
 
 class App extends React.Component {
-  render(){
-    return (<XSelect data={CONTACT_INFO_TYPE} style={{width: 140}}></XSelect>);
-  } 
+  render() {
+    return (<XSelect data={CONTACT_INFO_TYPE} style={{ width: 140 }} />);
+  }
 }
 
 ReactDOM.render(

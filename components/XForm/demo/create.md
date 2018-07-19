@@ -14,7 +14,7 @@ title:
 The most basic usage.
 
 ````jsx
-import { Input, InputNumber } from 'antd';
+import { Input } from 'antd';
 import XForm from 'mhc-antd-admin/XForm';
 
 class App extends React.Component {
@@ -67,7 +67,7 @@ class App extends React.Component {
           return getFieldDecorator('odometer', {
             initialValue: data.odometer || 0,
             rules: [{ required: true, message: '请输入公里数' }],
-          })(<Input placeholder="请输入公里数"/>);
+          })(<Input placeholder="请输入公里数" />);
         },
       },
     ];

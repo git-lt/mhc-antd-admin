@@ -39,12 +39,12 @@ class Footer extends React.Component {
               <div className="footer-center">
                 <h2><FormattedMessage id="app.footer.help" /></h2>
                 <div>
-                  <a target="_blank " href="https://github.com/ant-design/ant-design">
+                  <a target="_blank " href="https://github.com/git-lt/mhc-antd-admin">
                     GitHub
                   </a>
                 </div>
                 <div>
-                  <a href="/changelog">
+                  <a href="/CHANGELOG-cn">
                     <FormattedMessage id="app.footer.change-log" />
                   </a>
                 </div>
@@ -54,10 +54,7 @@ class Footer extends React.Component {
           </Row>
         </div>
         <div className="bottom-bar">
-          Made with <span className="heart">❤</span> by
-          <a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog">
-            <FormattedMessage id="app.footer.company" />
-          </a>
+          Made with <span className="heart">❤</span> by <FormattedMessage id="app.footer.company" />
         </div>
       </footer>
     );

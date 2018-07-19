@@ -30,8 +30,9 @@ class Banner extends React.PureComponent {
 
   render() {
     const { className, isMobile } = this.props;
-    const { intl: { locale } } = this.context;
-    const isZhCN = locale === 'zh-CN';
+    // const { intl: { locale } } = this.context;
+    // const isZhCN = locale === 'zh-CN';
+    const isZhCN = true;
     return (
       <div className="home-page-wrapper banner-wrapper" id="banner">
         <div className="banner-bg-wrapper">
@@ -60,7 +61,7 @@ class Banner extends React.PureComponent {
             type="bottom"
           >
             <h1 key="h1">
-              Ant Design
+              MHC Antd Admin
             </h1>
             <p key="p">
               <FormattedMessage id="app.home.introduce" />
@@ -69,16 +70,16 @@ class Banner extends React.PureComponent {
               <Link className="banner-btn components" to={utils.getLocalizedPathname('/docs/react/getting-started', isZhCN)}>
                 <FormattedMessage id="app.home.getting-started" />
               </Link>
-              <Link className="banner-btn language" to={utils.getLocalizedPathname('/docs/spec/getting-started', isZhCN)}>
+              <a href="javascript:;" className="banner-btn language">
                 <FormattedMessage id="app.home.design-language" />
-              </Link>
+              </a>
               {!isMobile && (
                 <GitHubButton
                   key="github-button"
                   size="large"
                   type="stargazers"
-                  namespace="ant-design"
-                  repo="ant-design"
+                  namespace="git-lt"
+                  repo="mhc-antd-admin"
                 />
               )}
             </div>

@@ -2,6 +2,7 @@
 category: Components
 type: Data Display
 subtitle: 通用表单
+cols: 1
 title: XForm
 ---
 

@@ -1,6 +1,6 @@
 {
   "name": "mhc-antd-admin",
-  "version": "0.0.7",
+  "version": "0.0.6",
   "title": "MHC Antd Admin",
   "description": "An out-of-box UI solution for enterprise applications",
   "keywords": [
@@ -145,7 +145,6 @@
   "scripts": {
     "add-version": "npm version patch",
     "build": "rm -rf lib && babel components -d lib",
-    "pub": "npm run build && npm run add-version && npm run publish",
     "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
     "site": "cross-env NODE_ENV=production bisheng build -c ./site/bisheng.config.js",
     "deploy": "npm run site && bisheng gh-pages --push-only",

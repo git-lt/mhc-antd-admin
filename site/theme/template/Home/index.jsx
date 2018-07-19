@@ -69,9 +69,9 @@ class Home extends React.Component {
       <DocumentTitle title={`Ant Design - ${intl.formatMessage({ id: 'app.home.slogan' })}`}>
         <div className="main-wrapper">
           <Banner {...childProps} />
-          <Page1 {...childProps} />
+          {/* <Page1 {...childProps} />
           <Page2 {...childProps} />
-          <Page3 {...childProps} />
+          <Page3 {...childProps} /> */}
           <style dangerouslySetInnerHTML={{ __html: getStyle() }} />
         </div>
       </DocumentTitle>

@@ -44,7 +44,7 @@ class App extends React.Component {
     const items = [
       {
         label: '车架号',
-        layout: { md: 24 },
+        layout: { md: 12 },
         itemLayout: {
           labelCol: { md: { span: 4 } },
           wrapperCol: { md: { span: 18 } },
@@ -58,7 +58,7 @@ class App extends React.Component {
       },
       {
         label: '公里数',
-        layout: { md: 24 },
+        layout: { md: 12 },
         itemLayout: {
           labelCol: { md: { span: 4 } },
           wrapperCol: { md: { span: 18 } },
@@ -67,11 +67,7 @@ class App extends React.Component {
           return getFieldDecorator('odometer', {
             initialValue: data.odometer || 0,
             rules: [{ required: true, message: '请输入公里数' }],
-          })(<InputNumber
-            min={0}
-            formatter={value => `${value}公里`}
-            parser={value => value.replace('公里', '')}
-          />);
+          })(<Input placeholder="请输入公里数"/>);
         },
       },
     ];

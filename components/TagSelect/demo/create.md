@@ -22,6 +22,6 @@ ReactDOM.render(
     <TagSelect.Option value="cat4">类目四</TagSelect.Option>
     <TagSelect.Option value="cat5">类目五</TagSelect.Option>
     <TagSelect.Option value="cat6">类目六</TagSelect.Option>
-  </TagSelect>
-, mountNode);
+  </TagSelect>,
+  mountNode);
 ````

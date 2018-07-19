@@ -3,6 +3,7 @@ category: Components
 type: Data Display
 subtitle: 筛选组
 title: XRadioGroup
+cols: 1
 ---
 
 筛选组

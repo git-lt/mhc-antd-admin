@@ -1,13 +1,13 @@
 ---
 order: 0
 title:
-  zh-CN: 基本
+  zh-CN: 水平型
   en-US: Basic
 ---
 
 ## zh-CN
 
-最简单的用法。
+水平展示。
 
 ## en-US
 
@@ -19,7 +19,7 @@ import DescriptionList from 'mhc-antd-admin/DescriptionList';
 const { Description } = DescriptionList;
 
 ReactDOM.render(
-  <DescriptionList size="large">
+  <DescriptionList size="large" layout="horizontal">
     <Description term="品牌"> 奥迪 </Description>
     <Description term="车型"> 国产奥迪奥迪A3 </Description>
     <Description term="车架号"> VR8GDF7WAL7 </Description>

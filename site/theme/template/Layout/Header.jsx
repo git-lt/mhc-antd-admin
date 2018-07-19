@@ -117,8 +117,7 @@ export default class Header extends React.Component {
     });
 
     const menu = [
-      <Button className="preview version" style={{ marginTop: 16, marginRight: 16, borderRadius: 40 }}><Icon type="eye-o" />预览</Button>,
-      <Tag color="geekblue" className="version" key="version">{antdVersion}</Tag>,
+      <Button className="preview version" style={{ marginTop: 16, marginRight: 16, borderRadius: 40 }}><Icon type="eye-o" />预览 {antdVersion}</Button>,
       <Menu className="menu-site" mode={menuMode} selectedKeys={[activeMenuItem]} id="nav" key="nav">
         <Menu.Item key="home">
           <Link to={utils.getLocalizedPathname('/', isZhCN)}>

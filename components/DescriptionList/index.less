@@ -20,6 +20,12 @@
     color: rgba(0, 0, 0, .35);
     white-space: nowrap;
     display: table-cell;
+    &:after {
+      content: ':';
+      margin: 0 8px 0 2px;
+      position: relative;
+      top: -0.5px;
+    }
   }
 
   .detail {
@@ -56,6 +62,9 @@
     .term {
       padding-bottom: 8px;
       display: block;
+      &:after {
+        display: none;
+      }
     }
 
     .detail {

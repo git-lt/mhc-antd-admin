@@ -27,7 +27,6 @@ const STATES = [
   { value: '待处理', key: '1' },
   { value: '执行中', key: '2' },
   { value: '已完成', key: '3' },
-  { value: '已取消', key: '4' },
 ];
 
 const columns = [
@@ -104,7 +103,7 @@ class App extends React.Component {
           <Search
             placeholder="请输入单号"
             onSearch={this.getList}
-            style={{ width: 300 }}
+            style={{ width: 200 }}
           />
         </div>
         <div><Button type="primary">创建新用户</Button></div>

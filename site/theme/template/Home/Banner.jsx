@@ -70,7 +70,7 @@ class Banner extends React.PureComponent {
               <Link className="banner-btn components" to={utils.getLocalizedPathname('/docs/react/getting-started', isZhCN)}>
                 <FormattedMessage id="app.home.getting-started" />
               </Link>
-              <a href="javascript:;" className="banner-btn language">
+              <a href="#" className="banner-btn language">
                 <FormattedMessage id="app.home.design-language" />
               </a>
               {!isMobile && (

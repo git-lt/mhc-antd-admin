@@ -3,9 +3,9 @@ import { injectIntl } from 'react-intl';
 import DocumentTitle from 'react-document-title';
 import PropTypes from 'prop-types';
 import Banner from './Banner';
-import Page1 from './Page1';
-import Page2 from './Page2';
-import Page3 from './Page3';
+// import Page1 from './Page1';
+// import Page2 from './Page2';
+// import Page3 from './Page3';
 // To store style which is only for Home and has conflicts with others.
 function getStyle() {
   return `

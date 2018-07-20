@@ -131,14 +131,14 @@ var __wpo = {
     "5df23546bcb5b1d9eefcc0321891410dc28b4529": "/mhc-antd-admin/components/Ellipsis/index.md.js",
     "f3d249f412b0248aa60e97f5d9bdf4d05a34fbf3": "/mhc-antd-admin/components/DescriptionList/index.md.js",
     "14b19c153e614c2d7aaf73c3c80ac7d16d28bd64": "/mhc-antd-admin/CHANGELOG.md.js",
-    "22cd30d394e53902e5298814c23fb1c2f398af9a": "/mhc-antd-admin/index.js",
+    "081a71e5bbe69d15c603fda68e1bc6b55fc32039": "/mhc-antd-admin/index.js",
     "6f3fa66ae227a822a48f984db485e06c962c2a23": "/mhc-antd-admin/common.js",
     "59130b2b380ee230f13f5b134b6230cd037626fd": "/mhc-antd-admin/index-1.css",
     "a9bd962dbc0ce7145aa955a734683550dbc1bac1": "/mhc-antd-admin/index-2.css"
   },
   "strategy": "changed",
   "responseStrategy": "network-first",
-  "version": "2018-7-20 09:03:27",
+  "version": "2018-7-20 09:36:24",
   "name": "webpack-offline",
   "pluginVersion": "5.0.5",
   "relativePaths": false

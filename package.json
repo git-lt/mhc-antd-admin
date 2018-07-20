@@ -45,6 +45,7 @@
     "dom-closest": "^0.2.0",
     "enquire.js": "^2.1.1",
     "intersperse": "^1.0.0",
+    "less-plugin-clean-css": "^1.5.1",
     "lodash": "^4.17.5",
     "moment": "^2.19.3",
     "omit.js": "^1.0.0",
@@ -104,6 +105,7 @@
     "jest": "^23.0.0",
     "jsdom": "~11.10.0",
     "jsonml.js": "^0.1.0",
+    "less": "^3.7.1",
     "lint-staged": "^7.0.0",
     "lz-string": "^1.4.4",
     "majo": "^0.6.2",
@@ -144,7 +146,8 @@
   },
   "scripts": {
     "add-version": "npm version patch",
-    "build": "rm -rf lib && babel components -d lib",
+    "build:less": "find lib -name '*.less' -exec lessc --clean-css {} \\; > ./lib/mhc-antd-admin.min.css",
+    "build": "rm -rf lib && NODE_ENV=production babel components -d lib --copy-files && npm run build:less",
     "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
     "site": "cross-env NODE_ENV=production bisheng build -c ./site/bisheng.config.js",
     "deploy": "npm run site && bisheng gh-pages --push-only",
@@ -156,6 +159,9 @@
     "lint-staged:style": "stylelint \"src/**/*.less\" --syntax less",
     "lint-staged:demo": "cross-env RUN_ENV=DEMO eslint --ext '.md'"
   },
+  "pre-publish":[
+    "npm run build"
+  ],
   "lint-staged": {
     "{site,components}/**/*.{js,jsx}": [
       "npm run lint-staged:js"

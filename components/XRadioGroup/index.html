@@ -17,6 +17,25 @@
       #nprogress { display: none }
     </style>
     <script>
+      (function() {
+        function getLocalizedPathname(path, zhCN) {
+          var pathname = path.startsWith('/') ? path : '/' + path;
+          if (!zhCN) { // to enUS
+            return /\/?index-cn/.test(pathname) ? '/' : pathname.replace('-cn', '');
+          } else if (pathname === '/') {
+            return '/index-cn';
+          } else if (pathname.endsWith('/')) {
+            return pathname.replace(/\/$/, '-cn/');
+          }
+          return pathname + '-cn';
+        }
+        var pathname = location.pathname;
+        location.pathname = getLocalizedPathname(pathname, true)
+
+        document.documentElement.className += 'zh-cn';
+      })()
+      </script>
+    <script>
     if (!window.Intl) {
       document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/??Intl.js,locale-data/jsonp/en.js,locale-data/jsonp/zh.js">' + '<' + '/script>');
     }

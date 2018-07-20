@@ -1,6 +1,6 @@
 {
   "name": "mhc-antd-admin",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "title": "MHC Antd Admin",
   "description": "An out-of-box UI solution for enterprise applications",
   "keywords": [
@@ -159,7 +159,7 @@
     "lint-staged:style": "stylelint \"src/**/*.less\" --syntax less",
     "lint-staged:demo": "cross-env RUN_ENV=DEMO eslint --ext '.md'"
   },
-  "pre-publish":[
+  "pre-publish": [
     "npm run build"
   ],
   "lint-staged": {

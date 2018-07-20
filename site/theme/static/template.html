@@ -10,20 +10,22 @@
     <!--[if IE]>
     <script src="https://as.alipayobjects.com/g/component/??es6-shim/0.35.1/es6-sham.min.js,es6-shim/0.35.1/es6-shim.min.js"></script>
     <![endif]-->
-    <script>
-      (function(){
-        var pathname = location.pathname;
-        if(pathname.indexOf('-cn')===-1){
-          location.pathname= pathname + '-cn';
-        }
-      })();
-    </script>
-    <link rel="icon" href="https://gw.alipayobjects.com/zos/rmsportal/rlpTLlbMzTNYuZGGCVYM.png" type="image/x-icon">
+    <link rel="icon" href="//img.maihaoche.com/mhc-fe/muu/1.6.6/muu/images/favicon.png">
     <link rel="stylesheet" type="text/css" href="{{ root }}index-1.css"/>
     <link rel="stylesheet" type="text/css" href="{{ root }}index-2.css"/>
     <style id="nprogress-style">
       #nprogress { display: none }
     </style>
+    <script>
+      (function() {
+        var pathname = location.pathname;
+        if(!pathname.endsWith('-cn')){
+          pathname += pathname.endsWith('/') ? 'index-cn' : '-cn'
+          location.pathname = pathname;
+          document.documentElement.className += 'zh-cn';
+        }
+      })()
+      </script>
     <script>
     if (!window.Intl) {
       document.writeln('<script src="https://as.alipayobjects.com/g/component/intl/1.0.1/??Intl.js,locale-data/jsonp/en.js,locale-data/jsonp/zh.js">' + '<' + '/script>');

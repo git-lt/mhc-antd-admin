@@ -5,7 +5,6 @@ import { enquireScreen } from 'enquire-js';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import 'moment/locale/zh-cn';
 import { LocaleProvider } from 'antd';
-import 'antd/dist/antd.css';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import OfflineRuntime from 'offline-plugin/runtime';
 import Header from './Header';

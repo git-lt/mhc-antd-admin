@@ -145,7 +145,7 @@
     "xhr2": "^0.1.3"
   },
   "scripts": {
-    "add-version": "npm version patch",
+    "addv": "npm version patch",
     "build:less": "find lib -name '*.less' -exec lessc --clean-css {} \\; > ./lib/mhc-antd-admin.min.css",
     "build": "rm -rf lib && NODE_ENV=production babel components -d lib --copy-files && npm run build:less",
     "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",

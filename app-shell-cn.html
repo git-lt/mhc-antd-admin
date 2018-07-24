@@ -19,7 +19,7 @@
     <script>
       (function() {
         var pathname = location.pathname;
-        if(!pathname.endsWith('-cn')){
+        if(pathname.indexOf('-cn')===-1){
           pathname += pathname.endsWith('/') ? 'index-cn' : '-cn'
           location.pathname = pathname;
           document.documentElement.className += 'zh-cn';
@@ -34,13 +34,13 @@
       document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' + '>' + '<' + '/' + 'script>');
     }
     </script>
-  </head>
+  <link href="/mhc-antd-admin/index.97cf60-1.css" rel="stylesheet"><link href="/mhc-antd-admin/index.97cf60-2.css" rel="stylesheet"><link href="/mhc-antd-admin/index.97cf60-3.css" rel="stylesheet"></head>
   <body>
     <div id="react-content">
-      
+      <div id="page-404" data-reactroot=""><section><h1>404</h1><p>你要找的页面不存在<a href="/index-cn">返回首页</a></p></section><style>#react-content { height: 100%; background-color: #fff }</style></div>
     </div>
     <link rel="stylesheet/less" type="text/css" href="/mhc-antd-admin/color.less"/>
     <script src="/mhc-antd-admin/common.js"></script>
     <script src="/mhc-antd-admin/index.js"></script>
-  </body>
+  <script type="text/javascript" src="/mhc-antd-admin/runtime.d244e8.js"></script><script type="text/javascript" src="/mhc-antd-admin/common.00e9a8.js"></script><script type="text/javascript" src="/mhc-antd-admin/index.a3d066.js"></script></body>
 </html>

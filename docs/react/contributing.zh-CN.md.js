@@ -1,1 +1,292 @@
-webpackJsonp([12],{1660:function(e,t){e.exports={content:["article",["p","\u8fd9\u7bc7\u6307\u5357\u4f1a\u6307\u5bfc\u4f60\u5982\u4f55\u4e3a Ant Design \u8d21\u732e\u4e00\u4efd\u81ea\u5df1\u7684\u529b\u91cf\uff0c\u8bf7\u5728\u4f60\u8981\u63d0 issue \u6216\u8005 pull request \u4e4b\u524d\u82b1\u51e0\u5206\u949f\u6765\u9605\u8bfb\u4e00\u904d\u8fd9\u7bc7\u6307\u5357\u3002"],["h2","\u884c\u4e3a\u51c6\u5219"],["p","\u6211\u4eec\u6709\u4e00\u4efd ",["a",{title:null,href:"https://github.com/ant-design/ant-design/blob/master/CODE_OF_CONDUCT.md"},"\u884c\u4e3a\u51c6\u5219"],"\uff0c\u5e0c\u671b\u6240\u6709\u7684\u8d21\u732e\u8005\u90fd\u80fd\u9075\u5b88\uff0c\u8bf7\u82b1\u65f6\u95f4\u9605\u8bfb\u4e00\u904d\u5168\u6587\u4ee5\u786e\u4fdd\u4f60\u80fd\u660e\u767d\u54ea\u4e9b\u662f\u53ef\u4ee5\u505a\u7684\uff0c\u54ea\u4e9b\u662f\u4e0d\u53ef\u4ee5\u505a\u7684\u3002"],["h2","\u900f\u660e\u7684\u5f00\u53d1"],["p","\u6211\u4eec\u6240\u6709\u7684\u5de5\u4f5c\u90fd\u4f1a\u653e\u5728 ",["a",{title:null,href:"https://github.com/ant-design"},"GitHub"]," \u4e0a\u3002\u4e0d\u7ba1\u662f\u6838\u5fc3\u56e2\u961f\u7684\u6210\u5458\u8fd8\u662f\u5916\u90e8\u8d21\u732e\u8005\u7684 pull request \u90fd\u9700\u8981\u7ecf\u8fc7\u540c\u6837\u6d41\u7a0b\u7684 review\u3002"],["h2","\u5206\u652f\u7ba1\u7406"],["p","\u57fa\u4e8e\u6211\u4eec\u7684 ",["a",{title:null,href:"/changelog"},"\u53d1\u5e03\u5468\u671f"],"\uff0c\u6211\u4eec\u6bcf\u4e2a\u6708\u90fd\u4f1a\u4ece ",["code","master"]," \u5206\u652f\u5207\u4e00\u4e2a ",["code","feature"]," \u5206\u652f\u51fa\u6765\uff08\u6bd4\u5982 ",["code","features-3.1"]," \u5206\u652f\u7528\u6765\u53d1\u5e03 3.1 \u7248\u672c\uff09\u3002 \u5982\u679c\u4f60\u8981\u4fee\u4e00\u4e2a bug\uff0c\u90a3\u4e48\u8bf7\u53d1 pull request \u5230 ",["code","master"],"\uff1b\u5982\u679c\u4f60\u8981\u63d0\u4e00\u4e2a\u589e\u52a0\u65b0\u529f\u80fd\u7684 pull request\uff0c\u90a3\u4e48\u8bf7\u57fa\u4e8e ",["code","feature"]," \u5206\u652f\u6765\u505a\u3002"],["h2","Bugs"],["p","\u6211\u4eec\u4f7f\u7528 ",["a",{title:null,href:"https://github.com/ant-design/ant-design/issues"},"GitHub Issues"]," \u6765\u505a bug \u8ffd\u8e2a\u3002 \u5982\u679c\u4f60\u60f3\u8981\u4f60\u53d1\u73b0\u7684 bug \u88ab\u5feb\u901f\u89e3\u51b3\uff0c\u6700\u597d\u7684\u529e\u6cd5\u5c31\u662f\u901a\u8fc7\u6211\u4eec\u63d0\u4f9b\u7684 ",["a",{title:null,href:"http://new-issue.ant.design"},"issue \u5c0f\u52a9\u624b"]," \u6765\u63d0 issue\u3002\u5e76\u4e14\u80fd\u4f7f\u7528\u8fd9\u4e2a ",["a",{title:null,href:"https://u.ant.design/codesandbox-repro"},"\u6a21\u677f"]," \u6765\u63d0\u4f9b\u91cd\u73b0\u3002"],["p","\u5728\u4f60\u62a5\u544a\u4e00\u4e2a bug \u4e4b\u524d\uff0c\u8bf7\u5148\u786e\u4fdd\u5df2\u7ecf\u641c\u7d22\u8fc7\u5df2\u6709\u7684 issue \u548c\u9605\u8bfb\u4e86\u6211\u4eec\u7684 ",["a",{title:null,href:"https://github.com/ant-design/ant-design/wiki/FAQ"},"\u5e38\u89c1\u95ee\u9898"],"\u3002"],["h2","\u65b0\u589e\u529f\u80fd"],["p","\u5982\u679c\u4f60\u6709\u6539\u8fdb\u6211\u4eec\u7684 API \u6216\u8005\u65b0\u589e\u529f\u80fd\u7684\u60f3\u6cd5\uff0c\u6211\u4eec\u540c\u6837\u63a8\u8350\u4f60\u4f7f\u7528\u6211\u4eec\u63d0\u4f9b\u7684 ",["a",{title:null,href:"http://new-issue.ant.design"},"issue \u5c0f\u52a9\u624b"]," \u6765\u65b0\u5efa\u4e00\u4e2a\u6dfb\u52a0\u65b0\u529f\u80fd\u7684 issue\u3002"],["h2","\u5f00\u53d1\u6d41\u7a0b"],["ol",["li",["p",["code","npm start"]," \u5728\u672c\u5730\u8fd0\u884c MHC Antd Admin \u7684\u7f51\u7ad9\u3002"]],["li",["p",["code","npm run build"]," \u6784\u5efa\u7ec4\u4ef6\u5e93\u3002"]],["li",["p",["code","npm publish"]," \u53d1\u5e03\u7ec4\u4ef6\u5e93\u3002"]],["li",["p",["code","npm run deploy"]," \u53d1\u5e03\u6587\u6863\u5230 gh-pages\u3002"]]]],meta:{order:9,title:"\u8d21\u732e\u6307\u5357",toc:!1,filename:"docs/react/contributing.zh-CN.md"},toc:["ul",["li",["a",{className:"bisheng-toc-h2",href:"#\u884c\u4e3a\u51c6\u5219",title:"\u884c\u4e3a\u51c6\u5219"},"\u884c\u4e3a\u51c6\u5219"]],["li",["a",{className:"bisheng-toc-h2",href:"#\u900f\u660e\u7684\u5f00\u53d1",title:"\u900f\u660e\u7684\u5f00\u53d1"},"\u900f\u660e\u7684\u5f00\u53d1"]],["li",["a",{className:"bisheng-toc-h2",href:"#\u5206\u652f\u7ba1\u7406",title:"\u5206\u652f\u7ba1\u7406"},"\u5206\u652f\u7ba1\u7406"]],["li",["a",{className:"bisheng-toc-h2",href:"#Bugs",title:"Bugs"},"Bugs"]],["li",["a",{className:"bisheng-toc-h2",href:"#\u65b0\u589e\u529f\u80fd",title:"\u65b0\u589e\u529f\u80fd"},"\u65b0\u589e\u529f\u80fd"]],["li",["a",{className:"bisheng-toc-h2",href:"#\u5f00\u53d1\u6d41\u7a0b",title:"\u5f00\u53d1\u6d41\u7a0b"},"\u5f00\u53d1\u6d41\u7a0b"]]]}}});
+webpackJsonp([12],{
+
+/***/ 1711:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "content": [
+    "article",
+    [
+      "p",
+      "这篇指南会指导你如何为 Ant Design 贡献一份自己的力量，请在你要提 issue 或者 pull request 之前花几分钟来阅读一遍这篇指南。"
+    ],
+    [
+      "h2",
+      "行为准则"
+    ],
+    [
+      "p",
+      "我们有一份 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "https://github.com/ant-design/ant-design/blob/master/CODE_OF_CONDUCT.md"
+        },
+        "行为准则"
+      ],
+      "，希望所有的贡献者都能遵守，请花时间阅读一遍全文以确保你能明白哪些是可以做的，哪些是不可以做的。"
+    ],
+    [
+      "h2",
+      "透明的开发"
+    ],
+    [
+      "p",
+      "我们所有的工作都会放在 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "https://github.com/ant-design"
+        },
+        "GitHub"
+      ],
+      " 上。不管是核心团队的成员还是外部贡献者的 pull request 都需要经过同样流程的 review。"
+    ],
+    [
+      "h2",
+      "分支管理"
+    ],
+    [
+      "p",
+      "基于我们的 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "/changelog"
+        },
+        "发布周期"
+      ],
+      "，我们每个月都会从 ",
+      [
+        "code",
+        "master"
+      ],
+      " 分支切一个 ",
+      [
+        "code",
+        "feature"
+      ],
+      " 分支出来（比如 ",
+      [
+        "code",
+        "features-3.1"
+      ],
+      " 分支用来发布 3.1 版本）。 如果你要修一个 bug，那么请发 pull request 到 ",
+      [
+        "code",
+        "master"
+      ],
+      "；如果你要提一个增加新功能的 pull request，那么请基于 ",
+      [
+        "code",
+        "feature"
+      ],
+      " 分支来做。"
+    ],
+    [
+      "h2",
+      "Bugs"
+    ],
+    [
+      "p",
+      "我们使用 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "https://github.com/ant-design/ant-design/issues"
+        },
+        "GitHub Issues"
+      ],
+      " 来做 bug 追踪。 如果你想要你发现的 bug 被快速解决，最好的办法就是通过我们提供的 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "http://new-issue.ant.design"
+        },
+        "issue 小助手"
+      ],
+      " 来提 issue。并且能使用这个 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "https://u.ant.design/codesandbox-repro"
+        },
+        "模板"
+      ],
+      " 来提供重现。"
+    ],
+    [
+      "p",
+      "在你报告一个 bug 之前，请先确保已经搜索过已有的 issue 和阅读了我们的 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "https://github.com/ant-design/ant-design/wiki/FAQ"
+        },
+        "常见问题"
+      ],
+      "。"
+    ],
+    [
+      "h2",
+      "新增功能"
+    ],
+    [
+      "p",
+      "如果你有改进我们的 API 或者新增功能的想法，我们同样推荐你使用我们提供的 ",
+      [
+        "a",
+        {
+          "title": null,
+          "href": "http://new-issue.ant.design"
+        },
+        "issue 小助手"
+      ],
+      " 来新建一个添加新功能的 issue。"
+    ],
+    [
+      "h2",
+      "开发流程"
+    ],
+    [
+      "ol",
+      [
+        "li",
+        [
+          "p",
+          [
+            "code",
+            "npm start"
+          ],
+          " 在本地运行 MHC Antd Admin 的网站。"
+        ]
+      ],
+      [
+        "li",
+        [
+          "p",
+          [
+            "code",
+            "npm run build"
+          ],
+          " 构建组件库。"
+        ]
+      ],
+      [
+        "li",
+        [
+          "p",
+          [
+            "code",
+            "npm publish"
+          ],
+          " 发布组件库。"
+        ]
+      ],
+      [
+        "li",
+        [
+          "p",
+          [
+            "code",
+            "npm run deploy"
+          ],
+          " 发布文档到 gh-pages。"
+        ]
+      ]
+    ]
+  ],
+  "meta": {
+    "order": 9,
+    "title": "贡献指南",
+    "toc": false,
+    "filename": "docs/react/contributing.zh-CN.md"
+  },
+  "toc": [
+    "ul",
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#行为准则",
+          "title": "行为准则"
+        },
+        "行为准则"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#透明的开发",
+          "title": "透明的开发"
+        },
+        "透明的开发"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#分支管理",
+          "title": "分支管理"
+        },
+        "分支管理"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#Bugs",
+          "title": "Bugs"
+        },
+        "Bugs"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#新增功能",
+          "title": "新增功能"
+        },
+        "新增功能"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#开发流程",
+          "title": "开发流程"
+        },
+        "开发流程"
+      ]
+    ]
+  ]
+};
+
+/***/ })
+
+});
+//# sourceMappingURL=contributing.zh-CN.md.js.map

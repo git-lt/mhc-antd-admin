@@ -1,1 +1,248 @@
-webpackJsonp([15],{1656:function(t,e){t.exports={content:["section",["p","\u4e0b\u62c9\u9009\u62e9\u5668"],["h2","\u4f55\u65f6\u4f7f\u7528"],["ul",["li",["p","\u7b80\u5355\u7684\u4e0b\u62c9\u9009\u62e9"]]],["p","\u5f15\u7528\u65b9\u5f0f\uff1a"],["pre",{lang:"javascript",highlighted:'<span class="token keyword">import</span> <span class="token punctuation">{</span> XSelect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">\'mhc-antd-admin\'</span><span class="token punctuation">;</span>'},["code","import { XSelect } from 'mhc-antd-admin';"]]],meta:{category:"Components",type:"Data Display",subtitle:"\u4e0b\u62c9\u9009\u62e9\u5668",title:"XSelect",filename:"components/XSelect/index.md"},toc:["ul",["li",["a",{className:"bisheng-toc-h2",href:"#\u4f55\u65f6\u4f7f\u7528",title:"\u4f55\u65f6\u4f7f\u7528"},"\u4f55\u65f6\u4f7f\u7528"]],["li",["a",{className:"bisheng-toc-h2",href:"#API",title:"API"},"API"]]],api:["section",["h2","API"],["table",["thead",["tr",["th","\u53c2\u6570"],["th","\u8bf4\u660e"],["th","\u7c7b\u578b"],["th","\u9ed8\u8ba4\u503c"]]],["tbody",["tr",["td","onSelect"],["td","\u9009\u62e9\u65f6\u7684\u56de\u8c03"],["td","Function"],["td","false"]],["tr",["td","labelInValue"],["td","\u9009\u62e9\u7ed3\u679c\u662f\u5426\u4e3a\u5bf9\u8c61"],["td","Boolean"],["td","-"]],["tr",["td","keyName"],["td",["code","Option"]," \u4e2d\u7684 ",["code","value"]," \u540d\u79f0"],["td","String"],["td","-"]],["tr",["td","valueName"],["td",["code","Option"]," \u4e2d\u7684\u663e\u793a\u503c\u540d\u79f0"],["td","String"],["td","-"]],["tr",["td","placeholder"],["td","\u63d0\u793a\u6587\u672c"],["td","String"],["td","-"]],["tr",["td","data"],["td",["code","Select"]," \u7ec4\u4ef6\u7684\u6570\u636e"],["td","Array"],["td","-"]]]]]}}});
+webpackJsonp([15],{
+
+/***/ 1707:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "content": [
+    "section",
+    [
+      "p",
+      "下拉选择器"
+    ],
+    [
+      "h2",
+      "何时使用"
+    ],
+    [
+      "ul",
+      [
+        "li",
+        [
+          "p",
+          "简单的下拉选择"
+        ]
+      ]
+    ],
+    [
+      "p",
+      "引用方式："
+    ],
+    [
+      "pre",
+      {
+        "lang": "javascript",
+        "highlighted": "<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> XSelect <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'mhc-antd-admin'</span><span class=\"token punctuation\">;</span>"
+      },
+      [
+        "code",
+        "import { XSelect } from 'mhc-antd-admin';"
+      ]
+    ]
+  ],
+  "meta": {
+    "category": "Components",
+    "type": "Data Display",
+    "subtitle": "下拉选择器",
+    "title": "XSelect",
+    "filename": "components/XSelect/index.md"
+  },
+  "toc": [
+    "ul",
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#何时使用",
+          "title": "何时使用"
+        },
+        "何时使用"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#API",
+          "title": "API"
+        },
+        "API"
+      ]
+    ]
+  ],
+  "api": [
+    "section",
+    [
+      "h2",
+      "API"
+    ],
+    [
+      "table",
+      [
+        "thead",
+        [
+          "tr",
+          [
+            "th",
+            "参数"
+          ],
+          [
+            "th",
+            "说明"
+          ],
+          [
+            "th",
+            "类型"
+          ],
+          [
+            "th",
+            "默认值"
+          ]
+        ]
+      ],
+      [
+        "tbody",
+        [
+          "tr",
+          [
+            "td",
+            "onSelect"
+          ],
+          [
+            "td",
+            "选择时的回调"
+          ],
+          [
+            "td",
+            "Function"
+          ],
+          [
+            "td",
+            "false"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "labelInValue"
+          ],
+          [
+            "td",
+            "选择结果是否为对象"
+          ],
+          [
+            "td",
+            "Boolean"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "keyName"
+          ],
+          [
+            "td",
+            [
+              "code",
+              "Option"
+            ],
+            " 中的 ",
+            [
+              "code",
+              "value"
+            ],
+            " 名称"
+          ],
+          [
+            "td",
+            "String"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "valueName"
+          ],
+          [
+            "td",
+            [
+              "code",
+              "Option"
+            ],
+            " 中的显示值名称"
+          ],
+          [
+            "td",
+            "String"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "placeholder"
+          ],
+          [
+            "td",
+            "提示文本"
+          ],
+          [
+            "td",
+            "String"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "data"
+          ],
+          [
+            "td",
+            [
+              "code",
+              "Select"
+            ],
+            " 组件的数据"
+          ],
+          [
+            "td",
+            "Array"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ]
+      ]
+    ]
+  ]
+};
+
+/***/ })
+
+});
+//# sourceMappingURL=index.md.js.map

@@ -1,1 +1,259 @@
-webpackJsonp([14],{1658:function(t,e){t.exports={content:["section",["p","\u901a\u7528\u5217\u8868"],["h2","\u4f55\u65f6\u4f7f\u7528"],["ul",["li",["p","\u7528\u4e8e\u5e38\u89c4\u5217\u8868\u9875\u9762\u7684\u5c55\u793a\uff0c\u901a\u8fc7\u914d\u7f6e ",["code","table"]," \u548c ",["code","form"]," \u6765\u5feb\u901f\u6784\u5efa\u5217\u8868\u9875\u9762"]]],["p","\u5f15\u7528\u65b9\u5f0f\uff1a"],["pre",{lang:"javascript",highlighted:'<span class="token keyword">import</span> <span class="token punctuation">{</span> XTable <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">\'mhc-antd-admin\'</span><span class="token punctuation">;</span>'},["code","import { XTable } from 'mhc-antd-admin';"]]],meta:{category:"Components",type:"Data Display",subtitle:"\u901a\u7528\u5217\u8868",cols:1,title:"XTable",filename:"components/XTable/index.md"},toc:["ul",["li",["a",{className:"bisheng-toc-h2",href:"#\u4f55\u65f6\u4f7f\u7528",title:"\u4f55\u65f6\u4f7f\u7528"},"\u4f55\u65f6\u4f7f\u7528"]],["li",["a",{className:"bisheng-toc-h2",href:"#API",title:"API"},"API"]]],api:["section",["h2","API"],["table",["thead",["tr",["th","\u53c2\u6570"],["th","\u8bf4\u660e"],["th","\u7c7b\u578b"],["th","\u9ed8\u8ba4\u503c"]]],["tbody",["tr",["td","onSelect"],["td","\u9009\u62e9\u65f6\u7684\u56de\u8c03"],["td","Function"],["td","false"]],["tr",["td","labelInValue"],["td","\u9009\u62e9\u7ed3\u679c\u662f\u5426\u4e3a\u5bf9\u8c61"],["td","Boolean"],["td","-"]],["tr",["td","keyName"],["td",["code","Option"]," \u4e2d\u7684 ",["code","value"]," \u540d\u79f0"],["td","String"],["td","-"]],["tr",["td","valueName"],["td",["code","Option"]," \u4e2d\u7684\u663e\u793a\u503c\u540d\u79f0"],["td","String"],["td","-"]],["tr",["td","placeholder"],["td","\u63d0\u793a\u6587\u672c"],["td","String"],["td","-"]],["tr",["td","data"],["td",["code","Select"]," \u7ec4\u4ef6\u7684\u6570\u636e"],["td","Array"],["td","-"]]]]]}}});
+webpackJsonp([14],{
+
+/***/ 1709:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "content": [
+    "section",
+    [
+      "p",
+      "通用列表"
+    ],
+    [
+      "h2",
+      "何时使用"
+    ],
+    [
+      "ul",
+      [
+        "li",
+        [
+          "p",
+          "用于常规列表页面的展示，通过配置 ",
+          [
+            "code",
+            "table"
+          ],
+          " 和 ",
+          [
+            "code",
+            "form"
+          ],
+          " 来快速构建列表页面"
+        ]
+      ]
+    ],
+    [
+      "p",
+      "引用方式："
+    ],
+    [
+      "pre",
+      {
+        "lang": "javascript",
+        "highlighted": "<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> XTable <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'mhc-antd-admin'</span><span class=\"token punctuation\">;</span>"
+      },
+      [
+        "code",
+        "import { XTable } from 'mhc-antd-admin';"
+      ]
+    ]
+  ],
+  "meta": {
+    "category": "Components",
+    "type": "Data Display",
+    "subtitle": "通用列表",
+    "cols": 1,
+    "title": "XTable",
+    "filename": "components/XTable/index.md"
+  },
+  "toc": [
+    "ul",
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#何时使用",
+          "title": "何时使用"
+        },
+        "何时使用"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#API",
+          "title": "API"
+        },
+        "API"
+      ]
+    ]
+  ],
+  "api": [
+    "section",
+    [
+      "h2",
+      "API"
+    ],
+    [
+      "table",
+      [
+        "thead",
+        [
+          "tr",
+          [
+            "th",
+            "参数"
+          ],
+          [
+            "th",
+            "说明"
+          ],
+          [
+            "th",
+            "类型"
+          ],
+          [
+            "th",
+            "默认值"
+          ]
+        ]
+      ],
+      [
+        "tbody",
+        [
+          "tr",
+          [
+            "td",
+            "onSelect"
+          ],
+          [
+            "td",
+            "选择时的回调"
+          ],
+          [
+            "td",
+            "Function"
+          ],
+          [
+            "td",
+            "false"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "labelInValue"
+          ],
+          [
+            "td",
+            "选择结果是否为对象"
+          ],
+          [
+            "td",
+            "Boolean"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "keyName"
+          ],
+          [
+            "td",
+            [
+              "code",
+              "Option"
+            ],
+            " 中的 ",
+            [
+              "code",
+              "value"
+            ],
+            " 名称"
+          ],
+          [
+            "td",
+            "String"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "valueName"
+          ],
+          [
+            "td",
+            [
+              "code",
+              "Option"
+            ],
+            " 中的显示值名称"
+          ],
+          [
+            "td",
+            "String"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "placeholder"
+          ],
+          [
+            "td",
+            "提示文本"
+          ],
+          [
+            "td",
+            "String"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ],
+        [
+          "tr",
+          [
+            "td",
+            "data"
+          ],
+          [
+            "td",
+            [
+              "code",
+              "Select"
+            ],
+            " 组件的数据"
+          ],
+          [
+            "td",
+            "Array"
+          ],
+          [
+            "td",
+            "-"
+          ]
+        ]
+      ]
+    ]
+  ]
+};
+
+/***/ })
+
+});
+//# sourceMappingURL=index.md.js.map

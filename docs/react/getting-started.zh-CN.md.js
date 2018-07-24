@@ -1,1 +1,142 @@
-webpackJsonp([10],{1662:function(t,e){t.exports={content:["article",{},["h2","\u5728\u7ebf\u6f14\u793a"],["p","\u5f00\u53d1\u4e2d..."],["h3","\u4f7f\u7528\u7ec4\u4ef6"],["p","\u5b89\u88c5"],["pre",{lang:null,highlighted:'npm install mhc<span class="token operator">-</span>antd<span class="token operator">-</span>admin <span class="token operator">-</span><span class="token operator">-</span>save'},["code","npm install mhc-antd-admin --save"]],["h2","\u6309\u9700\u5f15\u7528"],["pre",{lang:null,highlighted:"import { XSelect } from <span class=\"token string\">'mhc-antd-admin'</span>"},["code","import { XSelect } from 'mhc-antd-admin'"]]],meta:{order:1,title:"\u5feb\u901f\u4e0a\u624b",filename:"docs/react/getting-started.zh-CN.md"},description:["section",["p","MHC Antd Admin \u81f4\u529b\u4e8e\u63d0\u4f9b\u7ed9\u63d0\u5347\u7ba1\u7406\u5e73\u53f0\u524d\u7aef\u7684\u5f00\u53d1\u4f53\u9a8c\u548c\u5f00\u53d1\u6548\u7387\u3002"],["blockquote",["p","\u5728\u5f00\u59cb\u4e4b\u524d\uff0c\u63a8\u8350\u5148\u5b66\u4e60 ",["a",{title:null,href:"http://facebook.github.io/react/"},"React"]," \u548c ",["a",{title:null,href:"http://babeljs.io/docs/learn-es2015/"},"ES2015"],"\uff0c\u5e76\u6b63\u786e\u5b89\u88c5\u548c\u914d\u7f6e\u4e86 ",["a",{title:null,href:"https://nodejs.org/"},"Node.js"]," v6.5 \u6216\u4ee5\u4e0a\u3002\n\u5b98\u65b9\u6307\u5357\u5047\u8bbe\u4f60\u5df2\u4e86\u89e3\u5173\u4e8e HTML\u3001CSS \u548c JavaScript \u7684\u4e2d\u7ea7\u77e5\u8bc6\uff0c\u5e76\u4e14\u5df2\u7ecf\u5b8c\u5168\u638c\u63e1\u4e86 React \u5168\u5bb6\u6876\u7684\u6b63\u786e\u5f00\u53d1\u65b9\u5f0f\u3002\u5982\u679c\u4f60\u521a\u5f00\u59cb\u5b66\u4e60\u524d\u7aef\u6216\u8005 React\uff0c\u5c06 UI \u6846\u67b6\u4f5c\u4e3a\u4f60\u7684\u7b2c\u4e00\u6b65\u53ef\u80fd\u4e0d\u662f\u6700\u597d\u7684\u4e3b\u610f\u3002"]],["p","\u63d0\u4f9b\u57fa\u4e8e ",["code","atnd"]," \u7684\u6269\u5c55\u7ec4\u4ef6\uff0c\u4ee5\u53ca\u5e38\u7528\u7684\u7ec4\u4ef6\u7684\u6700\u4f73\u5b9e\u8df5\u548c\u793a\u4f8b\uff0c\u5982\uff1a\u5730\u56fe\u3001\u56fe\u8868\u3001\u590d\u5236\u3001\u56fe\u7247\u4e0a\u4f20\u3001\u6587\u4ef6\u4e0a\u4f20\u3001\u56fe\u7247\u67e5\u770b\u3001\u89c6\u9891\u64ad\u653e\u3001\u5bcc\u6587\u672c\u7f16\u8f91\u5668\u3001Execel\u5bfc\u5165\u5bfc\u51fa\u3001\u767b\u5f55\u6ce8\u518c\u7b49PC\u540e\u53f0\u7ec4\u4ef6\u3002"]],toc:["ul",["li",["a",{className:"bisheng-toc-h2",href:"#\u5728\u7ebf\u6f14\u793a",title:"\u5728\u7ebf\u6f14\u793a"},"\u5728\u7ebf\u6f14\u793a"]],["li",["a",{className:"bisheng-toc-h2",href:"#\u6309\u9700\u5f15\u7528",title:"\u6309\u9700\u5f15\u7528"},"\u6309\u9700\u5f15\u7528"]]]}}});
+webpackJsonp([10],{
+
+/***/ 1713:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "content": [
+    "article",
+    {
+
+    },
+    [
+      "h2",
+      "在线演示"
+    ],
+    [
+      "p",
+      "开发中..."
+    ],
+    [
+      "h3",
+      "使用组件"
+    ],
+    [
+      "p",
+      "安装"
+    ],
+    [
+      "pre",
+      {
+        "lang": null,
+        "highlighted": "npm install mhc<span class=\"token operator\">-</span>antd<span class=\"token operator\">-</span>admin <span class=\"token operator\">-</span><span class=\"token operator\">-</span>save"
+      },
+      [
+        "code",
+        "npm install mhc-antd-admin --save"
+      ]
+    ],
+    [
+      "h2",
+      "按需引用"
+    ],
+    [
+      "pre",
+      {
+        "lang": null,
+        "highlighted": "import { XSelect } from <span class=\"token string\">'mhc-antd-admin'</span>"
+      },
+      [
+        "code",
+        "import { XSelect } from 'mhc-antd-admin'"
+      ]
+    ]
+  ],
+  "meta": {
+    "order": 1,
+    "title": "快速上手",
+    "filename": "docs/react/getting-started.zh-CN.md"
+  },
+  "description": [
+    "section",
+    [
+      "p",
+      "MHC Antd Admin 致力于提供给提升管理平台前端的开发体验和开发效率。"
+    ],
+    [
+      "blockquote",
+      [
+        "p",
+        "在开始之前，推荐先学习 ",
+        [
+          "a",
+          {
+            "title": null,
+            "href": "http://facebook.github.io/react/"
+          },
+          "React"
+        ],
+        " 和 ",
+        [
+          "a",
+          {
+            "title": null,
+            "href": "http://babeljs.io/docs/learn-es2015/"
+          },
+          "ES2015"
+        ],
+        "，并正确安装和配置了 ",
+        [
+          "a",
+          {
+            "title": null,
+            "href": "https://nodejs.org/"
+          },
+          "Node.js"
+        ],
+        " v6.5 或以上。\n官方指南假设你已了解关于 HTML、CSS 和 JavaScript 的中级知识，并且已经完全掌握了 React 全家桶的正确开发方式。如果你刚开始学习前端或者 React，将 UI 框架作为你的第一步可能不是最好的主意。"
+      ]
+    ],
+    [
+      "p",
+      "提供基于 ",
+      [
+        "code",
+        "atnd"
+      ],
+      " 的扩展组件，以及常用的组件的最佳实践和示例，如：地图、图表、复制、图片上传、文件上传、图片查看、视频播放、富文本编辑器、Execel导入导出、登录注册等PC后台组件。"
+    ]
+  ],
+  "toc": [
+    "ul",
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#在线演示",
+          "title": "在线演示"
+        },
+        "在线演示"
+      ]
+    ],
+    [
+      "li",
+      [
+        "a",
+        {
+          "className": "bisheng-toc-h2",
+          "href": "#按需引用",
+          "title": "按需引用"
+        },
+        "按需引用"
+      ]
+    ]
+  ]
+};
+
+/***/ })
+
+});
+//# sourceMappingURL=getting-started.zh-CN.md.js.map

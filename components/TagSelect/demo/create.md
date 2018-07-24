@@ -8,7 +8,7 @@ title:
 结合 `Tag` 的 `TagSelect` 组件，方便的应用于筛选类目的业务场景中。
 
 ````jsx
-import {TagSelect} from 'mhc-antd-admin';
+import { TagSelect } from 'mhc-antd-admin';
 
 function handleFormSubmit(checkedValue) {
   console.log(checkedValue);

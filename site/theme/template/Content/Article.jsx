@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import DocumentTitle from 'react-document-title';
 import { getChildren } from 'jsonml.js/lib/utils';
 import { Timeline, Alert, Affix } from 'antd';
-import delegate from 'delegate';
+// import delegate from 'delegate';
 import EditButton from './EditButton';
 import { ping } from '../utils';
 

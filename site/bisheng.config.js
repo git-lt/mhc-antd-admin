@@ -1,6 +1,6 @@
 const path = require('path');
 const CSSSplitWebpackPlugin = require('css-split-webpack-plugin').default;
-const OfflinePlugin = require('offline-plugin');
+const OfflinePlugin = require('@yesmeck/offline-plugin');
 const replaceLib = require('antd-tools/lib/replaceLib');
 const getExternalResources = require('./getExternalResources');
 
@@ -82,7 +82,7 @@ module.exports = {
       // 'antd/lib': path.join(process.cwd(), 'components'),
       // 'antd/es': path.join(process.cwd(), 'components'),
       // antd: path.join(process.cwd(), 'index'),
-      'mhc-antd-admin': path.join(process.cwd(), 'components'),
+      'mhc-antd-admin': path.join(process.cwd(), 'components/index.js'),
       site: path.join(process.cwd(), 'site'),
       'react-router': 'react-router/umd/ReactRouter',
     };

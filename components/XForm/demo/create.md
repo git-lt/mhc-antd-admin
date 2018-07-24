@@ -15,7 +15,7 @@ The most basic usage.
 
 ````jsx
 import { Input } from 'antd';
-import XForm from 'mhc-antd-admin/XForm';
+import {XForm} from 'mhc-antd-admin';
 
 class App extends React.Component {
   state = {

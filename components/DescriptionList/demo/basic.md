@@ -14,7 +14,7 @@ title:
 The most basic usage.
 
 ````jsx
-import DescriptionList from 'mhc-antd-admin/DescriptionList';
+import {DescriptionList} from 'mhc-antd-admin';
 
 const { Description } = DescriptionList;
 

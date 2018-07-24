@@ -37,6 +37,7 @@ export default class Demo extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { highlightedCode } = nextProps;
+    if (!document) return;
     const div = document.createElement('div');
     div.innerHTML = highlightedCode[1].highlighted;
     this.setState({ sourceCode: div.textContent });

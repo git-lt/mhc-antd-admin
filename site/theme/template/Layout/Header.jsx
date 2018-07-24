@@ -74,28 +74,6 @@ export default class Header extends React.Component {
     });
   }
 
-  handleVersionChange = (url) => {
-    const currentUrl = window.location.href;
-    const currentPathname = window.location.pathname;
-    window.location.href = currentUrl.replace(window.location.origin, url)
-      .replace(currentPathname, utils.getLocalizedPathname(currentPathname));
-  }
-
-  handleLangChange = () => {
-    const { location: { pathname } } = this.props;
-    const currentProtocol = `${window.location.protocol}//`;
-    const currentHref = window.location.href.substr(currentProtocol.length);
-
-    if (utils.isLocalStorageNameSupported()) {
-      localStorage.setItem('locale', utils.isZhCN(pathname) ? 'en-US' : 'zh-CN');
-    }
-
-    window.location.href = currentProtocol + currentHref.replace(
-      window.location.pathname,
-      utils.getLocalizedPathname(pathname, !utils.isZhCN(pathname)),
-    );
-  }
-
   render() {
     const { menuVisible } = this.state;
     const { isMobile } = this.context;

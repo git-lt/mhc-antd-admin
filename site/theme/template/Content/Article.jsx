@@ -15,11 +15,11 @@ export default class Article extends React.Component {
 
   componentDidMount() {
     // Add ga event click
-    this.delegation = delegate(this.node, '.resource-card', 'click', (e) => {
-      if (window.ga) {
-        window.ga('send', 'event', 'Download', 'resource', e.delegateTarget.href);
-      }
-    }, false);
+    // this.delegation = delegate(this.node, '.resource-card', 'click', (e) => {
+    //   if (window.ga) {
+    //     window.ga('send', 'event', 'Download', 'resource', e.delegateTarget.href);
+    //   }
+    // }, false);
     this.componentDidUpdate();
   }
 

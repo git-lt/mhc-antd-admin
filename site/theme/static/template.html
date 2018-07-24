@@ -19,7 +19,7 @@
     <script>
       (function() {
         var pathname = location.pathname;
-        if(!pathname.endsWith('-cn')){
+        if(pathname.indexOf('-cn')===-1){
           pathname += pathname.endsWith('/') ? 'index-cn' : '-cn'
           location.pathname = pathname;
           document.documentElement.className += 'zh-cn';

@@ -14,7 +14,7 @@ title:
 The most basic usage.
 
 ````jsx
-import XSelect from 'mhc-antd-admin/XSelect';
+import {XSelect} from 'mhc-antd-admin';
 
 const CONTACT_INFO_TYPE = [
   { key: '6', value: '验车司机' },

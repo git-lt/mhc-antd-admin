@@ -19,7 +19,7 @@ Also note that, in this mode, the outer container needs to have a specified widt
 
 
 ````jsx
-import Ellipsis from 'mhc-antd-admin/Ellipsis';
+import {Ellipsis} from 'mhc-antd-admin';
 
 const article = <p>There were injuries alleged in three <a href="#cover">cases in 2015</a>, and a fourth incident in September, according to the safety recall report. After meeting with US regulators in October, the firm decided to issue a voluntary recall.</p>;
 

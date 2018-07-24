@@ -14,7 +14,7 @@ title:
 The most basic usage.
 
 ````jsx
-import XRadioGroup from 'mhc-antd-admin/XRadioGroup';
+import {XRadioGroup} from 'mhc-antd-admin';
 
 const INSPECT_STATUS = [
   { key: '5', value: '待分配', state: 'warning' },

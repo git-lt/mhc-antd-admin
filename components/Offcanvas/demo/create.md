@@ -14,7 +14,7 @@ title:
 The most basic usage.
 
 ````jsx
-import Offcanvas from 'mhc-antd-admin/Offcanvas';
+import {Offcanvas} from 'mhc-antd-admin';
 import { Button } from 'antd';
 
 

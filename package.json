@@ -7,7 +7,7 @@
     "build": "rm -rf lib && NODE_ENV=production babel components -d lib --copy-files",
     "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
     "site": "cross-env NODE_ENV=production bisheng build -c ./site/bisheng.config.js",
-    "deploy": "bisheng gh-pages --push-only",
+    "deploy": "npm run site && bisheng gh-pages --push-only",
     "addv": "npm version patch",
     "lint-fix:code": "eslint --fix site scripts components ./.eslintrc.js ./webpack.config.js --ext '.js,.jsx'",
     "lint-fix:demo": "eslint-tinker ./components/*/demo/*.md",

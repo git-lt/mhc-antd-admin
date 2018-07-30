@@ -127,7 +127,7 @@ export default class ComponentDoc extends React.PureComponent {
                 <span className="token keyword">import </span>
                 {`{ ${title} }`}
                 <span className="token keyword"> from </span>
-                <span className="token string">mhc-antd-amdin</span>
+                <span className="token string">"mhc-antd-amdin"</span>
                 <span className="token punctuation">;</span>
               </code>
             </pre>

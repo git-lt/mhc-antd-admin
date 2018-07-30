@@ -12,6 +12,7 @@ export default props => {
       <Menu className="menu-site" key="nav" mode="horizontal" defaultSelectedKeys={defaultSelectedKeys}>
         <MenuItem key="/"> <Link to="/">首页</Link></MenuItem>
         <MenuItem key="docs/react"> <Link to="/docs/start">组件</Link></MenuItem>
+        <MenuItem key="github"> <a href="https://github.com/git-lt/mhc-antd-admin/tree/master">Github</a></MenuItem>
       </Menu>
     </div>
   </header>;

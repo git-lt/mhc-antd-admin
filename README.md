@@ -1,8 +1,33 @@
 ## 基于 `React + Antd` 的扩展组件库
 
 
-TODO LIST
+### 启动项目
 
+```
+npm run start 或 npm start
+```
+
+### 构建组件库
+
+```
+npm run build
+```
+
+### 发布组件库
+
+```
+npm run addv
+npm publish
+```
+
+### 发布文档至 Github
+
+```
+npm run deploy
+```
+
+
+### TODO LIST
 
 - [x] DescriptionList 表单详情展示组件
 - [x] Offcanvas 实现各种业务场景下的弹出层
@@ -16,6 +41,7 @@ TODO LIST
 - [X] 面包屑
 - [X] FlvVideoPlayer  flv、mp4格式视频播放 flv.js
 - [X] ImgPreview 图片放大查看  react-viewerjs
+- [X] 登录权限验证
 - [ ] EditableText 可编辑的文本
 - [ ] 图片上传（查看、替换、删除、列表）
 - [ ] 图片裁剪
@@ -40,4 +66,10 @@ TODO LIST
 - [ ] 消息列表
 - [ ] 注册
 - [ ] 生成二维码
-- [ ] 滚动容器
+- [ ] 操作权限验证
+- [ ] 个人中心+修改密码
+
+
+### 在线示例 Demo
+
+开发中...

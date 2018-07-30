@@ -8,11 +8,7 @@ const pluginAntdConfig = {
   }),
 };
 
-
 module.exports = {
-  // lazyLoad(nodePath, nodeValue) {
-  //   return nodePath.endsWith('/demo');
-  // },
   lazyLoad: false,
   home: '/',
   plugins: [

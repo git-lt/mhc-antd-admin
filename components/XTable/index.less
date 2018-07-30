@@ -1,0 +1,58 @@
+.tms-datatable {
+  background-color: #fff;
+  padding-bottom: 16px;
+  
+  &-form {
+    padding: 16px 16px 0 16px;
+
+    .ant-form-item {
+      margin-bottom: 24px;
+      margin-right: 0;
+      display: flex;
+      > .ant-form-item-label {
+        line-height: 32px;
+        padding-right: 8px;
+      }
+      .ant-form-item-control {
+        line-height: 32px;
+      }
+    }
+    .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+  }
+  &-tools {
+    padding: 16px;
+  }
+  &-table {
+    padding: 0 16px;
+    position: relative;
+  }
+}
+
+.tms-columns-selection {
+  position: absolute;
+  top: 0;
+  right: 32px;
+  height: 46px;
+  line-height: 46px;
+  z-index: 10;
+  .anticon-setting {
+    font-size: 18px;
+  }
+  &__inner {
+    width: 610px;
+    .ant-checkbox-group-item {
+      width: 140px;
+      margin-bottom: 4px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      overflow: hidden;
+    }
+  }
+  &__actions {
+    text-align: right;
+    padding-top: 8px;
+  }
+}

@@ -1,0 +1,7 @@
+/node_modules/*
+node_modules/*
+doc/*
+/*.js
+components/**/*.js
+!.eslintrc.js
+!components/*/demo/*

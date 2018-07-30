@@ -1,0 +1,66 @@
+{
+  "name": "mhc-antd-admin",
+  "version": "0.0.19",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf lib && NODE_ENV=production babel components -d lib --copy-files",
+    "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
+    "site": "cross-env NODE_ENV=production bisheng build -c ./site/bisheng.config.js",
+    "deploy": "bisheng gh-pages --push-only",
+    "addv": "npm version patch",
+    "lint-fix:code": "eslint --fix site scripts components ./.eslintrc.js ./webpack.config.js --ext '.js,.jsx'",
+    "lint-fix:demo": "eslint-tinker ./components/*/demo/*.md",
+    "lint-fix:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint ./.eslintrc.js ./webpack.config.js",
+    "lint-staged:style": "stylelint \"src/**/*.less\" --syntax less",
+    "lint-staged:demo": "cross-env RUN_ENV=DEMO eslint --ext '.md'"
+  },
+  "lint-staged": {
+    "{site,components}/**/*.{js,jsx}": [
+      "npm run lint-staged:js"
+    ],
+    "components/*/demo/*.md": [
+      "npm run lint-staged:demo"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^3.7.2",
+    "axios": "^0.18.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-es2015": "^6.24.1",
+    "classnames": "^2.2.6",
+    "jsonml.js": "^0.1.0",
+    "lz-string": "^1.4.4",
+    "rc-queue-anim": "^1.6.5",
+    "rc-scroll-anim": "^2.5.5",
+    "rc-tween-one": "^2.2.3",
+    "react": "^16.4.1",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.4.1",
+    "react-github-button": "^0.1.11",
+    "react-resizable": "^1.7.5",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-import": "^1.8.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bisheng": "^0.29.0",
+    "bisheng-plugin-antd": "^0.16.5",
+    "bisheng-plugin-react": "^0.6.3",
+    "eslint": "^5.2.0",
+    "eslint-config-alloy": "^1.4.2",
+    "eslint-plugin-react": "^7.10.0",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
+    "react-hot-loader": "^4.3.4"
+  }
+}

@@ -1,0 +1,71 @@
+.descriptionList {
+  .ant-row {
+    overflow: hidden;
+  }
+
+  .title {
+    font-size: 14px;
+    color: rgba(0, 0, 0, .85);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .term {
+    line-height: 20px;
+    padding-bottom: 16px;
+    margin-right: 8px;
+    color: rgba(0, 0, 0, .35);
+    white-space: nowrap;
+    display: table-cell;
+    &:after {
+      content: ':';
+      margin: 0 8px 0 2px;
+      position: relative;
+      top: -0.5px;
+    }
+  }
+
+  .detail {
+    line-height: 22px;
+    width: 100%;
+    padding-bottom: 16px;
+    color: rgba(0,0,0,.65);
+    display: table-cell;
+  }
+
+  &.small {
+    :global {
+      .ant-row {
+        margin-bottom: -8px;
+      }
+    }
+    .title {
+      margin-bottom: 12px;
+      color: rgba(0,0,0,.85);
+    }
+    .term,
+    .detail {
+      padding-bottom: 8px;
+    }
+  }
+
+  &.large {
+    .title {
+      font-size: 16px;
+    }
+  }
+
+  &.vertical {
+    .term {
+      padding-bottom: 8px;
+      display: block;
+      &:after {
+        display: none;
+      }
+    }
+
+    .detail {
+      display: block;
+    }
+  }
+}

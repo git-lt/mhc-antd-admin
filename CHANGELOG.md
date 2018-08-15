@@ -13,6 +13,16 @@ timeline: true
 
 ---
 
+## 0.0.21
+
+- 🔥 新增 `BgImg` 背景图片组件，简化图片显示和排版。
+- 🔥 新增 `BraftEditor` 富文本编辑器。
+- 🔥 新增 `CopyToClipboard` 复制文本。
+- 🔥 新增 `EmptyContent` 空内容提示。
+- 🔥 新增 `Exception` 异常内容提示。
+- 🔥 新增 `FlvPlayer` 视频播放。
+- 🔥 新增 `ImgViewer` 图片查看器。
+
 ## 0.0.18
 
 0.0.18 是一个重磅更新，提交了很多激动人心的变化和新特性。

@@ -53,7 +53,7 @@ npm run deploy
 - [ ] 富文本编辑器 react-lz-editor
 - [ ] Markdown 编辑器
 - [ ] Execle 导入导出 sheet.js
-- [ ] 错误页面 401 404 500
+- [X] 错误页面 401 404 500
 - [ ] 换肤
 - [ ] 响应式
 - [ ] HTML转图片

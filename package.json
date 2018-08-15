@@ -30,9 +30,14 @@
   "dependencies": {
     "antd": "^3.7.2",
     "axios": "^0.18.0",
+    "braft-editor": "^1.9.8",
     "classnames": "^2.2.6",
+    "copy-to-clipboard": "^3.0.8",
+    "flv.js": "^1.4.2",
     "jsonml.js": "^0.1.0",
+    "lodash": "^4.17.10",
     "lz-string": "^1.4.4",
+    "memoize-one": "^4.0.0",
     "rc-queue-anim": "^1.6.5",
     "rc-scroll-anim": "^2.5.5",
     "rc-tween-one": "^2.2.3",
@@ -43,7 +48,9 @@
     "react-github-button": "^0.1.11",
     "react-resizable": "^1.7.5",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "react-viewer": "^2.5.3",
+    "react-viewerjs": "^0.1.9"
   },
   "devDependencies": {
     "babel": "^6.23.0",

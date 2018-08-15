@@ -32,3 +32,5 @@ export { default as CountDown } from './CountDown';
 export { default as TagIcon } from './TagIcon';
 export { default as QRcode } from './QRcode';
 export { default as StateTag } from './StateTag';
+export { default as DateTimePicker } from './DateTimePicker';
+export { default as XUpload } from './XUpload';

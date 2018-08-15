@@ -28,3 +28,5 @@ export { default as EmptyContent } from './EmptyContent';
 export { default as Exception } from './Exception';
 export { default as FlvPlayer } from './FlvPlayer';
 export { default as ImgViewer } from './ImgViewer';
+export { default as DateTimePicker } from './DateTimePicker'
+export { default as XUpload } from './XUpload'

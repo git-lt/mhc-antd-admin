@@ -28,3 +28,7 @@ export { default as EmptyContent } from './EmptyContent';
 export { default as Exception } from './Exception';
 export { default as FlvPlayer } from './FlvPlayer';
 export { default as ImgViewer } from './ImgViewer';
+export { default as CountDown } from './CountDown';
+export { default as TagIcon } from './TagIcon';
+export { default as QRcode } from './QRcode';
+export { default as StateTag } from './StateTag';

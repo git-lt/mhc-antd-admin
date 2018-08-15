@@ -38,6 +38,7 @@
     "lodash": "^4.17.10",
     "lz-string": "^1.4.4",
     "memoize-one": "^4.0.0",
+    "qrcode.react": "^0.8.0",
     "rc-queue-anim": "^1.6.5",
     "rc-scroll-anim": "^2.5.5",
     "rc-tween-one": "^2.2.3",
@@ -49,8 +50,7 @@
     "react-resizable": "^1.7.5",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-viewer": "^2.5.3",
-    "react-viewerjs": "^0.1.9"
+    "react-viewer": "^2.5.3"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -69,7 +69,7 @@
     "eslint": "^5.2.0",
     "eslint-config-alloy": "^1.4.2",
     "eslint-plugin-react": "^7.10.0",
-    "less": "^3.8.0",
+    "less": "^2.7.3",
     "less-loader": "^4.1.0",
     "react-hot-loader": "^4.3.4"
   }

@@ -50,6 +50,8 @@ npm run deploy
 - [X] 错误页面 401 404 500 Exception
 - [X] 富文本编辑器 BraftEditor
 - [X] 复制内容 copy-to-clipboard 
+- [X] 倒计时 CountDown
+- [X] 生成二维码
 - [ ] EditableText 可编辑的文本
 - [ ] 图片上传（查看、替换、删除、列表）
 - [ ] 图片裁剪
@@ -63,14 +65,12 @@ npm run deploy
 - [ ] 换肤
 - [ ] 响应式
 - [ ] HTML转图片
-- [ ] 倒计时 CountDown
 - [ ] 图表 G2
 - [ ] 地图 AMap
 - [ ] Split-panel 可分隔的容器
 - [ ] 时间范围选择器
 - [ ] 消息列表
 - [ ] 注册
-- [ ] 生成二维码
 - [ ] 操作权限验证
 - [ ] 个人中心+修改密码
 

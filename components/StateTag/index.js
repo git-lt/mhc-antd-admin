@@ -14,36 +14,50 @@ class StateTag extends Component {
 
   }
   render() {
-    const { color, text, type, spin, state, style } = this.state;
+    const { color, text, type, spin, state, style, code } = this.state;
     return (
       state.map((item, index) => {
         console.log(item, item.key, '6789');
         switch (style) {
           case 'solid':
-
+            return (
+              <div>
+                <Tag color="green">volcano</Tag>
+                <Tag color="red">volcano</Tag>
+                <Tag color="cyan">volcano</Tag>
+                <Tag color="blue">volcano</Tag>
+                <Tag color="orange">volcano</Tag>
+              </div>
+            );
+            break;
             // if (index === code) {
             //   return (<Badge status="success" text={item.value} />);
             // }
             // break;
           case 'line':
-            return (<Tag color="volcano">volcano</Tag>);
+            console.log(item, code, 9999888);
+            if (code == item.key) {
+              console.log(item.value);
+              return (
+                <div>
+                  <Tag color={item.color}>{item.value}</Tag>
+                </div>
+              );
+            }
             break;
             // if (index === code) {
             //   return (<Tag color={item.color}>volcano</Tag>);
             // }
             // break;
           case 'dot':
-            return (<Badge status="warning" text="Warning" />);
+            if (code == item.key) {
+              return (
+                <div>
+                  <Badge status={item.state} />{item.value}
+                </div>
+              );
+            }
             break;
-          default:
-            // if (index === code) {
-            //   return (<div>
-            //     <Tag color={color}>
-            //       <Icon type={type} style={{ fontSize: 10 }} spin={spin}></Icon>{item.value}
-            //     </Tag>
-            //   </div>);
-            // }
-            // break;
         }
 
 

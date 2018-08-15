@@ -13,7 +13,6 @@ order: 4
 
 | 参数      | 说明                                      | 类型         | 默认值 |
 |----------|------------------------------------------|-------------|-------|
-| spin | 是否有旋转动画 | boolean | false |
-| type | 图标类型 | String | - |
-| text |  tag中显示的文本内容 | String | -|
-| color |  标签颜色 | String | -|
+| state | 常量定义 | Array | - |
+| code | 类型 | Boolean | - |
+| style | 实心，空心，点 | String | -|

@@ -58,14 +58,14 @@ npm run deploy
 - [ ] 响应式
 - [ ] HTML转图片
 - [ ] 复制内容 copy-to-clipboard 
-- [ ] 倒计时 CountDown
+- [X] 倒计时 CountDown
 - [ ] 图表 G2
 - [ ] 地图 AMap
 - [ ] Split-panel 可分隔的容器
 - [ ] 时间范围选择器
 - [ ] 消息列表
 - [ ] 注册
-- [ ] 生成二维码
+- [X] 生成二维码
 - [ ] 操作权限验证
 - [ ] 个人中心+修改密码
 

@@ -21,3 +21,7 @@ export { default as TagSelect } from './TagSelect';
 export { default as Offcanvas } from './Offcanvas';
 export { default as TextEllipsis } from './TextEllipsis';
 export { default as DescriptionList } from './DescriptionList';
+export { default as CountDown } from './CountDown';
+export { default as TagIcon } from './TagIcon';
+export { default as QRcode } from './QRcode';
+export { default as StateTag } from './StateTag';

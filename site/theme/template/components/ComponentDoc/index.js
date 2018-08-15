@@ -81,6 +81,11 @@ export default class ComponentDoc extends React.PureComponent {
           rightChildren.push(demoElem);
         }
       });
+    console.log('leftChildren');
+    console.log(leftChildren);
+    console.log('rightChildren');
+    console.log(rightChildren);
+    console.log(isSingleCol);
 
     const jumper = showedDemo.map((demo) => {
       const title = demo.meta.title['zh-CN'];
@@ -139,7 +144,7 @@ export default class ComponentDoc extends React.PureComponent {
               className={isSingleCol ? 'code-boxes-col-1-1' : 'code-boxes-col-2-1'}>
               {leftChildren}
             </Col>
-            {isSingleCol && <Col className="code-boxes-col-2-1" span={12}>{rightChildren}</Col>}
+            {!isSingleCol && <Col className="code-boxes-col-2-1" span={12}>{rightChildren}</Col>}
           </Row>
           {
             props.utils.toReactComponent(

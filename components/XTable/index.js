@@ -2,35 +2,40 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Table, Divider, Checkbox, Popover, Button, Icon, Tooltip } from 'antd';
 import ResizeableTableTitle from './ResizeableTableTitle.js';
+import memoize from 'memoize-one';
+import deepEqual from 'lodash/isEqual';
 import './index.less';
 
 const noop = () => {};
 export default class XTable extends PureComponent {
   static propTypes = {
-    tableOptions: PropTypes.object,
     toolbar: PropTypes.any,
-    searchFormNode: PropTypes.any,
     showSearchForm: PropTypes.bool,
     columnResizable: PropTypes.bool,
     showColumnSelection: PropTypes.bool,
-    dataSource: PropTypes.array,
+
+    total: PropTypes.number,
+    current: PropTypes.number,
+    pageSize: PropTypes.number,
+    onChange: PropTypes.func,
   }
 
   static defaultProps ={
-    tableOptions: {},
     toolbar: null,
-    searchFormNode: null,
     showSearchForm: false,
     columnResizable: false,
     showColumnSelection: false,
-    dataSource: [],
+    total: 0,
+    current: 0,
+    pageSize: 30,
+    onChange: noop,
   }
 
   constructor(props) {
     super(props);
-    const { columnResizable, showColumnSelection, tableOptions } = props;
 
-    const { columns, ...otherTableConfig } = tableOptions;
+    const { columnResizable, showColumnSelection, columns } = props;
+
     let realColumns = columns.map(v => {
       return { ...v, show: !v.hidden };
     });
@@ -39,10 +44,9 @@ export default class XTable extends PureComponent {
       components = { header: { cell: ResizeableTableTitle }};
       realColumns = realColumns.map((col, index) => ({
         ...col,
-        onHeaderCell: col.resizable === false ? noop : column => ({
-          width: column.width,
-          onResize: this.onColumnResize(index),
-        }),
+        onHeaderCell: col.resizable === false ? noop : column => {
+          return column.width ? { width: column.width, onResize: this.onColumnResize(index) } : {};
+        }
       }));
     }
 
@@ -61,21 +65,13 @@ export default class XTable extends PureComponent {
 
     this.state = {
       columns: realColumns,
-      otherTableConfig,
       columnSelectOptions: columnSelection,
       columnCheckedValues,
       selectionVisible: false,
       components,
       showColumnSelection,
+      originColumns: [],
     };
-  }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.tableOptions !== prevState.tableOptions) {
-      const { columns, ...otherTableConfig } = nextProps.tableOptions;
-      return { otherTableConfig };
-    }
-    return null;
   }
 
   onColumnResize = index => (e, { size }) => {
@@ -104,19 +100,27 @@ export default class XTable extends PureComponent {
     columns.forEach((item, i) => {
       item.show = columnCheckedValues.indexOf(String(i)) > -1;
     });
+
     this.setState({ columns: [...columns], selectionVisible: false });
   }
 
+  filterShowColumnItems = memoize(list => list.filter(v => v.show), deepEqual)
+
   render() {
-    const { toolbar, searchFormNode, showSearchForm, children } = this.props;
+    const { toolbar, showSearchForm, total, current, columns, pageSize, onPageChange, children, pagination = {}, ...others } = this.props;
     const {
-      columns, otherTableConfig, columnSelectOptions, showColumnSelection,
+      columnSelectOptions, showColumnSelection, columns: columnState,
       columnCheckedValues, selectionVisible, components,
     } = this.state;
 
-    const isShowSearchForm = (!!searchFormNode || children) && showSearchForm;
+    const isShowSearchForm = children && showSearchForm;
+    const filterColumns = this.filterShowColumnItems(columnState);
 
-    const filterColumns = columns.filter(v => v.show);
+    const otherTableConfig = {
+      pagination: { ...pagination, total, current, pageSize, onChange: onPageChange, onShowSizeChange: onPageChange }
+    };
+
+    if (components) otherTableConfig.components = components;
 
     const columnSelectionCon = (<div className="tms-columns-selection__inner">
       <Checkbox.Group
@@ -136,7 +140,7 @@ export default class XTable extends PureComponent {
         <div>
           {
             isShowSearchForm && (<Fragment>
-              <div className="tms-datatable-form">{searchFormNode || children}</div>
+              <div className="tms-datatable-form">{children}</div>
               <Divider style={{ margin: 0 }} dashed />
             </Fragment>)
           }
@@ -160,7 +164,7 @@ export default class XTable extends PureComponent {
               </Popover>
             </div>
           }
-          <Table {...otherTableConfig} columns={filterColumns} components={components}></Table>
+          <Table {...otherTableConfig} columns={filterColumns} {...others} ></Table>
         </div>
       </div>
     );

@@ -1,0 +1,36 @@
+.mhc-bg-img {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  &__txt {
+    background-color: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    bottom:0;
+    top:auto;
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+    color: #fff;
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -116,26 +116,19 @@ class App extends React.Component {
       dataSource: dataList,
       columns,
       loading: listLoading,
-      pagination: {
-        total,
-        current,
-        pageSize,
-        showQuickJumper: true,
-        showTotal: t => `共 ${t} 项`,
-        hideOnSinglePage: true,
-        pageSizeOptions: ['10', '20', '30', '40'],
-        onChange: this.onPageChange,
-        onShowSizeChange: this.onPageChange,
-      },
+      total,
+      current,
+      pageSize,
+      onChange: this.onPageChange,
       scroll: { x: 1700 },
     };
 
     return (
       <XTable
-        tableOptions={options}
         toolbar={toolbar}
         columnResizable
         showColumnSelection
+        {...options}
       />
     );
   }

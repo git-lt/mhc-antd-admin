@@ -18,6 +18,6 @@ import {QRcode} from 'mhc-antd-admin';
 
 
 ReactDOM.render(
- <QRcode text='生成二维码' size={150} colsize={12}></QRcode>
+ <QRcode text='二维码生成' size={160} colsize={12}></QRcode>
 , mountNode);
 ````

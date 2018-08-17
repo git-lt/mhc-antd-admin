@@ -1,14 +1,14 @@
 ---
-order: 0
+order: 2
 title:
-  zh-CN: 点图标
-  en-US: dot
+  zh-CN: 线框型图标
+  en-US: solid
 ---
 
 ## zh-CN
-
 用于标记事物的属性和维度,
 进行分类。
+
 
 ````jsx
 import {StateTag} from 'mhc-antd-admin';
@@ -22,11 +22,11 @@ const tagtype_yanche =  [
 
 ReactDOM.render(
   <div>
-    <StateTag options={tagtype_yanche} code={5} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={10} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={15} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={99} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={76} type={'dot'}></StateTag>  
+    <StateTag options={tagtype_yanche} code={5} type={'solid'}></StateTag>
+    <StateTag options={tagtype_yanche} code={10} type={'solid'}></StateTag>
+    <StateTag options={tagtype_yanche} code={15} type={'solid'}></StateTag>
+    <StateTag options={tagtype_yanche} code={99} type={'solid'}></StateTag>
+    <StateTag options={tagtype_yanche} code={76} type={'solid'}></StateTag>  
   </div>
 , mountNode);
 ````

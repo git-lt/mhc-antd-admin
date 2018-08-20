@@ -2,7 +2,7 @@
   "name": "mhc-antd-admin",
   "version": "0.0.24",
   "description": "",
-  "main": "lib",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rm -rf lib && NODE_ENV=production babel components -d lib --copy-files",
     "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",
@@ -25,7 +25,15 @@
       "npm run lint-staged:demo"
     ]
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antd-Admin/mhc-antd-admin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Antd-Admin/mhc-antd-admin/issues"
+  },
+  "homepage": "https://git-lt.github.io/mhc-antd-admin/",
+  "author": "hz_liutao@qq.com",
   "license": "ISC",
   "dependencies": {
     "antd": "^3.7.2",

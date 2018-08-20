@@ -1,6 +1,8 @@
 /node_modules/*
 node_modules/*
-doc/*
+_site/*
+site/*
+docs/*
 /*.js
 !lib/**
 !.eslintrc.js

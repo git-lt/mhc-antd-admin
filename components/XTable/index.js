@@ -2,8 +2,6 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Table, Divider, Checkbox, Popover, Button, Icon, Tooltip } from 'antd';
 import ResizeableTableTitle from './ResizeableTableTitle.js';
-import memoize from 'memoize-one';
-import deepEqual from 'lodash/isEqual';
 import './index.less';
 
 const noop = () => {};
@@ -13,11 +11,13 @@ export default class XTable extends PureComponent {
     showSearchForm: PropTypes.bool,
     columnResizable: PropTypes.bool,
     showColumnSelection: PropTypes.bool,
+    onPageChange: PropTypes.func,
 
     total: PropTypes.number,
     current: PropTypes.number,
     pageSize: PropTypes.number,
-    onChange: PropTypes.func,
+    showTotal: PropTypes.func,
+    showQuickJumper: PropTypes.func,
   }
 
   static defaultProps ={
@@ -28,13 +28,15 @@ export default class XTable extends PureComponent {
     total: 0,
     current: 0,
     pageSize: 30,
-    onChange: noop,
+    onPageChange: noop,
+    showTotal: noop,
+    showQuickJumper: noop,
   }
 
   constructor(props) {
     super(props);
 
-    const { columnResizable, showColumnSelection, columns } = props;
+    const { columnResizable, showColumnSelection, columns, total } = props;
 
     let realColumns = columns.map(v => {
       return { ...v, show: !v.hidden };
@@ -104,20 +106,18 @@ export default class XTable extends PureComponent {
     this.setState({ columns: [...columns], selectionVisible: false });
   }
 
-  filterShowColumnItems = memoize(list => list.filter(v => v.show), deepEqual)
-
   render() {
-    const { toolbar, showSearchForm, total, current, columns, pageSize, onPageChange, children, pagination = {}, ...others } = this.props;
+    const { toolbar, showSearchForm, total, current, columns, pageSize, onPageChange, showTotal, showQuickJumper, children, pagination = {}, ...others } = this.props;
     const {
       columnSelectOptions, showColumnSelection, columns: columnState,
       columnCheckedValues, selectionVisible, components,
     } = this.state;
 
     const isShowSearchForm = children && showSearchForm;
-    const filterColumns = this.filterShowColumnItems(columnState);
+    const filterColumns = columnState.filter(v => v.show);
 
     const otherTableConfig = {
-      pagination: { ...pagination, total, current, pageSize, onChange: onPageChange, onShowSizeChange: onPageChange }
+      pagination: { ...pagination, total, current, pageSize, onChange: onPageChange, onShowSizeChange: onPageChange, showTotal: showTotal, showQuickJumper: showQuickJumper }
     };
 
     if (components) otherTableConfig.components = components;

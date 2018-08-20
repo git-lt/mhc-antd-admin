@@ -26,4 +26,4 @@ title: XTable
 | total | 数据总条数，对应 pagnation.total | Number | 0 |
 | current | 当前页码，对应 pagnation.current | Number | 0 |
 | pageSize | 每页显示条数，对应 pagnation.pageSize | Number | 0 |
-| onChange | 点击分页或选择每页选择多少条时，对应 pagnation.onChange 和 pagnation.onShowSizeChange | Func | - |
+| onPageChange | 点击分页或选择每页选择多少条时，对应 pagnation.onChange 和 pagnation.onShowSizeChange | Func | - |

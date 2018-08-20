@@ -119,7 +119,7 @@ class App extends React.Component {
       total,
       current,
       pageSize,
-      onChange: this.onPageChange,
+      onPageChange: this.onPageChange,
       scroll: { x: 1700 },
     };
 

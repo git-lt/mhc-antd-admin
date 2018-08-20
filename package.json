@@ -2,7 +2,7 @@
   "name": "mhc-antd-admin",
   "version": "0.0.24",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib",
   "scripts": {
     "build": "rm -rf lib && NODE_ENV=production babel components -d lib --copy-files",
     "start": "rimraf _site && mkdir _site && cross-env NODE_ENV=development bisheng start -c ./site/bisheng.config.js",

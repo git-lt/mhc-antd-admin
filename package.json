@@ -1,6 +1,6 @@
 {
   "name": "mhc-antd-admin",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "基于 antd 的管理系统组件库",
   "main": "lib/index.js",
   "scripts": {

@@ -2,5 +2,6 @@
 node_modules/*
 doc/*
 /*.js
+!lib/**
 !.eslintrc.js
 !components/*/demo/*

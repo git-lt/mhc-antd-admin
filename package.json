@@ -34,6 +34,7 @@
   "homepage": "https://git-lt.github.io/mhc-antd-admin/",
   "author": "hz_liutao@qq.com",
   "license": "ISC",
+  "main":"lib/index.js",
   "dependencies": {
     "antd": "^3.7.2",
     "axios": "^0.18.0",

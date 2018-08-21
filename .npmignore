@@ -1,9 +1,12 @@
 /node_modules/*
-node_modules/*
+dist/*
 _site/*
-site/*
-docs/*
-/*.js
-!lib/**
-!.eslintrc.js
-!components/*/demo/*
+yarn.lock
+package-lock.json
+*.log.*
+.settings
+npm-debug.log
+
+# npmignore - content above this line is automatically generated and modifications may be omitted
+# see npmjs.com/npmignore for more details.
+true

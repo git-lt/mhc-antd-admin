@@ -28,8 +28,8 @@ class StateTag extends Component {
     type: PropTypes.string,
   }
 
-  static defaultPros = {
-    options: '',
+  static defaultProps = {
+    options: [],
     code: '',
     type: 'dot',
   }

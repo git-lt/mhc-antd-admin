@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Tag, Badge } from 'antd';
 import PropTypes from 'prop-types';
-import style from  './index.less';
+import './index.less';
 
 const stateMap = {
   filled: {
@@ -20,49 +20,37 @@ const stateMap = {
   }
 };
 
-class StateTag extends Component {
+const StateTag = ({ options, type, code, ...others }) => {
 
-  static propTypes = {
-    options: PropTypes.array,
-    code: PropTypes.number,
-    type: PropTypes.string,
-  }
+  // type: dot / filled / solid
+  const data = options[code];
+  const { text, state } = data;
 
-  static defaultProps = {
-    options: [],
-    code: '',
-    type: 'dot',
-  }
+  return (
+    <span {...others}>
+      {
+        (() => {
+          if (['filled', 'solid'].indexOf(type) > -1) {
+            return <Tag color={stateMap[type][state]} className="tag_inner_text">{text}</Tag>;
+          } else {
+            return <Badge status={state} text={text} />;
+          }
+        })()
+      }
+    </span>
+  );
+};
 
-  constructor(props) {
-    super(props);
+StateTag.propTypes = {
+  options: PropTypes.array,
+  code: PropTypes.number,
+  type: PropTypes.string,
+};
 
-    this.state = {
-      options: props.options,
-      code: props.code,
-      type: props.type,
-    };
-
-  }
-  render() {
-    const { options, type, code } = this.state;
-    // type: dot / filled / solid
-    const data = options.filter(v => v.key == code)[0];
-    console.log(data);
-    return (
-      <div>
-        {
-          (() => {
-            if (['filled', 'solid'].indexOf(type) > -1) {
-              return <Tag color={stateMap[type][data.state]} className={style.tag_inner_text}>{data.value}</Tag>;
-            } else {
-              return <Badge status={data.state} text={data.value} />;
-            }
-          })()
-        }
-      </div>
-    );
-  }
-}
+StateTag.defaultProps = {
+  options: [],
+  code: '',
+  type: 'dot',
+};
 
 export default StateTag;

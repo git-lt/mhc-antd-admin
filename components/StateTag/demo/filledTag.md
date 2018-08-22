@@ -12,12 +12,13 @@ title:
 ````jsx
 import {StateTag} from 'mhc-antd-admin';
 
-const tagtype_yanche =  [
-  { key: '5', value: '待分配', state: 'warning' },
-  { key: '10', value: '待验车', state: 'processing' },
-  { key: '15', value: '已完成', state: 'success' },
-  { key: '99', value: '已作废', state: 'error' },
-  { key: '76', value:'待调度', state:'default'}];
+ const tagtype_yanche = {
+    '5': { text: '待分配', state: 'warning' },
+    '10': { text: '待验车', state: 'processing' },
+    '15': { text: '已完成', state: 'success' },
+    '99': { text: '已作废', state: 'error' },
+    '76': { text:'待调度', state:'default'}
+  }
 
 ReactDOM.render(
   <div>

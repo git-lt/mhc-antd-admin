@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Tag, Badge } from 'antd';
 import PropTypes from 'prop-types';
-import style from  './index.less';
+import './index.less';
+import classNames from 'classnames';
 
 const stateMap = {
   filled: {
@@ -34,33 +35,26 @@ class StateTag extends Component {
     type: 'dot',
   }
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      options: props.options,
-      code: props.code,
-      type: props.type,
-    };
-
-  }
   render() {
-    const { options, type, code } = this.state;
+    const { options, type, code, className } = this.props;
     // type: dot / filled / solid
     const data = options.filter(v => v.key == code)[0];
-    console.log(data);
+    const cls = classNames({
+      [className]: className
+    });
+
     return (
-      <div>
+      <span className={cls}>
         {
           (() => {
             if (['filled', 'solid'].indexOf(type) > -1) {
-              return <Tag color={stateMap[type][data.state]} className={style.tag_inner_text}>{data.value}</Tag>;
+              return <Tag color={stateMap[type][data.state]} className="tag_inner_text">{data.value}</Tag>;
             } else {
               return <Badge status={data.state} text={data.value} />;
             }
           })()
         }
-      </div>
+      </span>
     );
   }
 }

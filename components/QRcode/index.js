@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import { Button, Input, Row, Col, message } from 'antd';
+import PropTypes from 'prop-types';
 const QRCode = require('qrcode.react');
 
 class QRcode extends Component {
+
+  static propTypes = {
+    text: PropTypes.string,
+    size: PropTypes.number,
+    colsize: PropTypes.number,
+  }
+  static defaultProps = {
+    text: '生成二维码',
+    size: 150,
+    colsize: 6,
+  }
 
   constructor(props) {
     super(props);
@@ -10,12 +22,10 @@ class QRcode extends Component {
     this.state = {
       inputurl: '',
       qrcodeshow: 'none',
-      text: props.text || '二维码生成',
-      size: props.size || 150,
-      colsize: props.colsize || 6,
     };
 
   }
+
 
   showqrcode = () => {
     if (this.state.inputurl) {
@@ -38,7 +48,8 @@ class QRcode extends Component {
     this.showqrcode();
   }
   render() {
-    const { inputurl, qrcodeshow, text, size, colsize } = this.state;
+    const { text, size, colsize } = this.props;
+    const { inputurl, qrcodeshow } = this.state;
     const { showqrcode, onPressEnter, onChange } = this;
     return (
       <div>

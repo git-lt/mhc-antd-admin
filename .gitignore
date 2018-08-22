@@ -2,6 +2,7 @@
 dist/*
 _site/*
 yarn.lock
+lib/*
 package-lock.json
 *.log.*
 .settings

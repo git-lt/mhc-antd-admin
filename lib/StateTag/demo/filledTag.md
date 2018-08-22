@@ -1,12 +1,11 @@
 ---
-order: 0
+order: 1
 title:
-  zh-CN: 点图标
-  en-US: dot
+  zh-CN: 填充型图标
+  en-US: filled
 ---
 
 ## zh-CN
-
 用于标记事物的属性和维度,
 进行分类。
 
@@ -22,11 +21,11 @@ const tagtype_yanche =  [
 
 ReactDOM.render(
   <div>
-    <StateTag options={tagtype_yanche} code={5} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={10} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={15} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={99} type={'dot'}></StateTag>
-    <StateTag options={tagtype_yanche} code={76} type={'dot'}></StateTag>  
+    <StateTag options={tagtype_yanche} code={5} type={'filled'}></StateTag>
+    <StateTag options={tagtype_yanche} code={10} type={'filled'}></StateTag>
+    <StateTag options={tagtype_yanche} code={15} type={'filled'}></StateTag>
+    <StateTag options={tagtype_yanche} code={99} type={'filled'}></StateTag>
+    <StateTag options={tagtype_yanche} code={76} type={'filled'}></StateTag>  
   </div>
 , mountNode);
 ````

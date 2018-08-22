@@ -1,6 +1,6 @@
 {
   "name": "mhc-antd-admin",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "基于 antd 的管理系统组件库",
   "scripts": {
     "build": "rm -rf lib && NODE_ENV=production babel components -d lib --copy-files",

@@ -1,67 +1,66 @@
 import React, { Component } from 'react';
-import { Icon, Tag, Badge } from 'antd';
+import { Tag, Badge } from 'antd';
+import PropTypes from 'prop-types';
+import style from  './index.less';
+
+const stateMap = {
+  filled: {
+    warning: '#faad14',
+    processing: '#1890ff',
+    success: '#52c41a',
+    error: '#f5222d',
+    default: '#d9d9d9',
+  },
+  solid: {
+    warning: 'orange',
+    processing: 'blue',
+    success: 'green',
+    error: 'red',
+    default: 'cyan',
+  }
+};
 
 class StateTag extends Component {
+
+  static propTypes = {
+    options: PropTypes.array,
+    code: PropTypes.number,
+    type: PropTypes.string,
+  }
+
+  static defaultProps = {
+    options: [],
+    code: '',
+    type: 'dot',
+  }
 
   constructor(props) {
     super(props);
 
     this.state = {
-      state: props.state,
+      options: props.options,
       code: props.code,
-      style: props.style,
+      type: props.type,
     };
 
   }
   render() {
-    const { color, text, type, spin, state, style, code } = this.state;
+    const { options, type, code } = this.state;
+    // type: dot / filled / solid
+    const data = options.filter(v => v.key == code)[0];
+    console.log(data);
     return (
-      state.map((item, index) => {
-        console.log(item, item.key, '6789');
-        switch (style) {
-          case 'solid':
-            return (
-              <div>
-                <Tag color="green">volcano</Tag>
-                <Tag color="red">volcano</Tag>
-                <Tag color="cyan">volcano</Tag>
-                <Tag color="blue">volcano</Tag>
-                <Tag color="orange">volcano</Tag>
-              </div>
-            );
-            break;
-            // if (index === code) {
-            //   return (<Badge status="success" text={item.value} />);
-            // }
-            // break;
-          case 'line':
-            console.log(item, code, 9999888);
-            if (code == item.key) {
-              console.log(item.value);
-              return (
-                <div>
-                  <Tag color={item.color}>{item.value}</Tag>
-                </div>
-              );
+      <div>
+        {
+          (() => {
+            if (['filled', 'solid'].indexOf(type) > -1) {
+              return <Tag color={stateMap[type][data.state]} className={style.tag_inner_text}>{data.value}</Tag>;
+            } else {
+              return <Badge status={data.state} text={data.value} />;
             }
-            break;
-            // if (index === code) {
-            //   return (<Tag color={item.color}>volcano</Tag>);
-            // }
-            // break;
-          case 'dot':
-            if (code == item.key) {
-              return (
-                <div>
-                  <Badge status={item.state} />{item.value}
-                </div>
-              );
-            }
-            break;
+          })()
         }
-
-
-      })
+      </div>
     );
   }
 }

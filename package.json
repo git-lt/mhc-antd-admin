@@ -8,7 +8,7 @@
     "site": "cross-env NODE_ENV=production bisheng build -c ./site/bisheng.config.js",
     "deploy": "npm run site && bisheng gh-pages --push-only",
     "addv": "npm version patch",
-    "publish": "npm run addv && npm publish",
+    "pub": "npm run addv && npm publish",
     "lint-fix:code": "eslint --fix site scripts components ./.eslintrc.js ./webpack.config.js --ext '.js,.jsx'",
     "lint-fix:demo": "eslint-tinker ./components/*/demo/*.md",
     "lint-fix:style": "stylelint --fix \"src/**/*.less\" --syntax less",

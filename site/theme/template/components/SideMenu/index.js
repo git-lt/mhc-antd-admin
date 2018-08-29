@@ -9,7 +9,7 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 export default props => {
-  const { data, defaultSelectedKey } = props;
+  const { data, defaultSelectedKey, ...others } = props;
   console.log(props);
   // 获取 meta 信息
   const docMetas = _sortBy(obj2arr(data.docs).map(v => v.meta), ['order']);
